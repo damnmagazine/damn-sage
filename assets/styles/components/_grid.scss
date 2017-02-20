@@ -1,0 +1,30 @@
+// Grid system
+.main {
+	padding-bottom: 2.5em;
+	@include make-sm-column($main-sm-columns);
+	
+	.sidebar-primary & {
+		@include make-sm-column($main-sm-columns - $sidebar-sm-columns);
+	}
+}
+
+.sidebar {
+	@include make-sm-column($sidebar-sm-columns);
+}
+
+.grey-container {
+	margin: 20px auto 40px;
+	background-color: #ddd;
+}
+
+.table-row {
+	width: 100%;
+	height: 100%;
+	@media screen and (min-width: 768px) { display: table-row; }
+	
+	.item {
+		float: none !important;
+		vertical-align: top;
+		@media screen and (min-width: 768px) { display: table-cell; }
+	}
+}

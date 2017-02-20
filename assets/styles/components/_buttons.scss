@@ -1,0 +1,60 @@
+.input-group-btn {
+  font-size: inherit;
+}
+
+.input-group-lg {
+  font-size: 20px;
+}
+
+.btn-noRadius {
+  border-radius: 0 !important;
+}
+
+.btn-whitestroke {
+  color: $white !important;
+  border-color: $white !important;
+  background: none !important;
+  text-transform: uppercase;
+  a {
+    color: $white !important;
+  }
+}
+
+/* bootstrap overrides */
+
+.btn-default,.btn-primary,.btn-success,.btn-info,.btn-warning,.btn-danger,.btn-black {
+    border-radius: 300px;
+    @include border-radius(300px);
+    font-weight: 300;
+    border: 0;
+    @include transition-all;
+    &:hover {
+      background-color: $black !important;
+      color: $white;
+    }
+}
+
+.btn-black {
+  background-color: $black !important;
+  &:hover {
+    background-color: lighten($black, 15%) !important;
+  }
+}
+
+.btn-primary {
+
+}
+
+.btn-lg {
+  font-size: (20 / 16) * 1em;
+}
+
+.btn-xl {
+  padding: (16 / 16) *1em (22 / 16) *1em;
+  line-height: 1.5;
+  font-size: (20 / 16) *1em;
+}
+
+.btn:hover {
+	background-color: inherit;
+}

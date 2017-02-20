@@ -1,0 +1,218 @@
+body.templated h2.items-title {
+	text-align: center;
+	font-weight: 200;
+	color: rgb(128,128,128);
+	font-style: italic;
+	text-transform: none;
+}
+
+.items-group {
+	a { color: rgb(128,128,128); }
+	a:hover { color: white; }
+}
+
+.item {
+	
+	.thumbnail-container {
+		width: 100%;
+		background: no-repeat center;
+		background-size: cover;
+		padding-top: 60%;
+		
+		&:hover  { opacity: .75; }
+	}
+	
+	h4	{
+		font-size: 1.4em;
+		
+		.issue-number {
+			font-weight: 200;
+			opacity: .5;
+		}
+	}
+	
+	.sub-title {
+		clear: both;
+		font-size: 1.25em;
+		font-style: italic;
+		color: white;
+	}
+		
+	&.item-tail-post {
+
+		.sub-title { margin: 5px 0; }
+	}
+	
+	&.item-head-post {
+		
+		h4	{
+			height: 24px;
+			overflow: hidden;
+		}
+		
+		.sub-title {
+			height: 22px;
+			position: relative;
+			top: -8px;
+			overflow: hidden;
+		}
+		.thumbnail-container { margin-bottom: 20px; }
+	}
+	
+	&.highlight-post {
+		width: 100%;
+		padding: 35% 0 0;
+		margin-bottom: 40px;
+		background: rgba(0,0,0, .5) no-repeat center;
+		background-size: cover;
+		box-sizing: border-box;
+		color: $positive;
+		font-size: 1.2em;
+		
+		.bg-fade {
+			padding: 20px 40px;
+			background: -webkit-linear-gradient(rgba(0,0,0,.2) 0%, rgba(0,0,0,.5) 100%);
+			background: linear-gradient(rgba(0,0,0,.2) 0%, rgba(0,0,0,.5) 100%);
+			
+			h4 {
+				font-size: 2em;
+				line-height: 1em;
+			}
+			
+			.sub-title { padding-bottom: 8px; }
+		}
+	}
+	
+	&.highlight-post-free {
+		width: 100%;
+		margin-bottom: 40px;
+		position:relative;
+		padding: .5%;
+		border: 1px solid rgba(0,0,0,.25);
+		
+		img { width: 100%; }
+		
+		.bg-fade {
+			position: absolute;
+			bottom: .5%;
+			width: 99%;
+			padding: 20px 40px 40px;
+			box-sizing: border-box;
+			background: -webkit-linear-gradient(rgba(0,0,0,.30) 0%, rgba(0,0,0,.70) 100%);
+			background: -moz-linear-gradient(rgba(0,0,0,.30) 0%, rgba(0,0,0,.70) 100%);
+			background: linear-gradient(rgba(0,0,0,.30) 0%, rgba(0,0,0,.70) 100%);
+			font-size: 1.2em;
+			color: $positive;
+			
+			h4 {
+				font-size: 2em;
+				line-height: 1em;
+			}
+			
+			.sub-title { padding-bottom: 8px; }
+		}
+		
+		@media screen and (max-width: 1280px) { 
+		
+			padding: 1%; 
+			
+			.bg-fade {
+				bottom: 1%;
+				width: 98%;
+				padding: 20px 30px 30px;
+				font-size: 1.1em;
+			}
+		}
+		
+		@media screen and (max-width: 767px) { 
+		
+			.bg-fade .excerpt { display: none; } 
+		}
+	}
+	
+	&.event-post {
+		width: 100%;
+		padding: 40% 0 0;
+		margin-bottom: 28px;
+		background: rgba(0,0,0, .5) no-repeat center;
+		background-size: cover;
+		box-sizing: border-box;
+		color: white;
+		font-size: 1.2em;
+		
+		.bg-fade {
+			height: 135px;
+			padding: 20px;
+			overflow: hidden;
+			background: -webkit-linear-gradient(rgba(0,0,0,.12) 0%, rgba(0,0,0,.6) 100%);
+			background: linear-gradient(rgba(0,0,0,.12) 0%, rgba(0,0,0,.6) 100%);
+			
+			color: $positive;
+			font-size: 1.4em;
+			line-height: 1.08em;
+			text-transform: uppercase;
+			
+			i { 
+				padding-left: 8px; text-transform: none;
+				font-size: .8em;
+			}			
+		}
+	}
+}
+
+.damn-plus-info {
+	padding-top: 28px;
+	padding-bottom: 28px;
+	font-size: 1.2em;
+	
+	> .col-lg-4 img { margin-top: 40%; }
+	
+	> .col-lg-8 {
+		border-left: 1px solid rgba(255,255,255, .6);
+		
+		hr { border-top: 1px solid rgba(255,255,255, .6); }
+		
+		h2, ul { margin-bottom: 20px; }
+		
+		li { 
+			padding-top: 8px;
+			border-bottom: 1px solid rgba(255,255,255, .4);
+		}
+		
+		.btn { 
+			font-weight: 700;
+			
+			&:hover { 
+				background-color: rgba(255,255,255, .6) !important;
+				color: $negative;
+			}
+		}
+	}
+	
+	@media screen and (max-width: 1199px) {
+		font-size: 1.1em;
+		
+		> .col-lg-4 img { margin: 0 0 10px; }
+		> .col-lg-8 { border-left-width: 0; }
+	}
+}
+
+/**
+ *	Positive contrast overrides
+ */
+.positive-contrast {
+	
+	.item {
+		
+		a:hover { color: black; }
+		.sub-title { color: $negative; }	
+		
+		
+		&.event-post .bg-fade,
+		&.highlight-post .bg-fade,
+		&.highlight-post-free .bg-fade {
+			a, a:hover, h4, .sub-title { color: $positive; }
+		}	
+	}
+	
+}

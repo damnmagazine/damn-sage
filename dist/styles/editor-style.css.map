@@ -1,0 +1,1 @@
+{"version":3,"sources":["../assets/styles/editor-style.scss"],"names":[],"mappings":"AAEA,KACE,OAAA","file":"editor-style.css","sourcesContent":["// @import \"main\";\n\nbody {\n  margin: 12px !important;\n}\n"],"sourceRoot":"assets/styles/"}

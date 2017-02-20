@@ -1,0 +1,67 @@
+<style type="text/css" media="screen">
+	/**
+	 * Style all colors based on issue # color
+	 */ 
+	a, a:visited, .issue-color, .logo-container .issue-selector li.active { color: {{issue.color}}; }
+	.damn-plus-info, .post-image { background-color: {{issue.color}}; }
+</style>
+
+<header>
+
+	<div class="container">
+		
+		<div class="logo-container">
+			<a href="/" title="home">
+			{{#contrast}}<img src="{{theme_path}}/dist/images/logo-positive.svg" alt="DAMN°" />{{/contrast}}
+			{{^contrast}}<img src="{{theme_path}}/dist/images/logo-negative.svg" alt="DAMN°" />{{/contrast}}
+			</a>
+	
+			<div class="issue-selector">
+				<ul class="issue-list">
+				{{#history}}
+					<li><a href="?issue=damn-{{.}}">{{.}}</a></li>
+				{{/history}}
+				</ul>
+			</div>
+			
+			<div class="issue-buttons">
+				{{#next_issue}}<a href='/?issue=damn-{{next_issue}}'><div class="fa fa-chevron-up"></div></a>{{/next_issue}}
+				{{^next_issue}}<div class="fa fa-chevron-up inactive"></div>{{/next_issue}}
+				
+				{{#prev_issue}}<a href='/?issue=damn-{{prev_issue}}'><div class="fa fa-chevron-down"></div></a>{{/prev_issue}}
+				{{^prev_issue}}<div class="fa fa-chevron-down inactive"></div>{{/prev_issue}}
+			</div>
+			
+		</div>
+		
+		<nav>
+			{{{navigation}}}
+		</nav>
+		
+		<div class='social-share'>
+			<i>Share this beauty</i>
+			<div class="addthis_custom_sharing"></div>
+		</div>
+	</div>
+		
+</header>
+
+<script lang="text/javascript">
+	
+	var list =  jQuery('header .issue-list');
+	
+	var current = list.find('[href="?issue=damn-{{issue.number}}"]');
+	current.parent().html(current.html()).addClass('active');
+	
+	var pos = list.find('li.active').position();
+	
+	// Shift to right
+	if (pos) list.css('left', -pos.left + 'px');
+	
+	// Old issue
+	else {
+		list.html('<li class="active"><a href="/editions/damn-{{issue.number}}">{{issue.number}}</a></li>');
+		jQuery('header .issue-buttons').hide();
+	}
+	
+</script>

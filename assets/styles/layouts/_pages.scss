@@ -1,0 +1,247 @@
+.page-featured-image {
+  margin-bottom: 1.75em;
+  width: 100%;
+  line-height: 1px;
+  img {
+    @include maximage;
+  }
+}
+
+.search-large {
+  padding: 2em 0 10em 0;
+  @media screen and (max-width: 767px) {
+    padding-top: 0em;
+  }
+  .search-form {
+    width: 100%;
+    .input-group {
+      width: 100%;
+      input.search-field {
+        width: 100%;
+        font-size: 3em;
+        padding: .3em;
+        height: auto;
+        box-shadow: none;
+        border-color: $bordercolor;
+        @media screen and (max-width: 480px) {
+          font-size: .9em !important;
+        }
+        @media screen and (min-width: 481px) and (max-width: 767px) {
+          font-size: 1em !important;
+        }
+      }
+      button {
+        width: 100%;
+        font-size: 3em;
+        padding: .3em 1em;
+        height: auto;
+        border: 1px solid $bordercolor;
+        background: none;
+        color: $black !important;
+        @media screen and (max-width: 480px) {
+          font-size: .9em !important;
+        }
+        @media screen and (min-width: 481px) and (max-width: 767px) {
+          font-size: 1em !important;
+        }
+        &:hover {
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+.wp-tag-cloud {
+  list-style: none;
+  li {
+    display: inline-block;
+    a {
+      display: inline-block;
+      padding: 0 1em;
+      border: 1px solid $bordercolor;
+      margin: 0 .75em .75em 0;
+      line-height: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.mailing-list-form {
+  form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 3em 0;
+    float: left;
+    width: 100%;
+    input {
+      width: 95%;
+      line-height: 40px;
+      border-radius: 40px;
+      padding: 0 1em;
+    }
+  }
+  .col-sm-10 {
+    float: none !important;
+    display: inline-block;
+  }
+  .form-group {
+    float: left;
+    width: 100%;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      .col-sm-2, .col-sm-10 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      div {
+        width: 100%;
+      }
+    }
+    input {
+      width: 95%;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+// DAMN PLUS join page or login/summary page
+.join-damn-plus-info, .subscribe-page {
+  .magazine-cover {
+    h3 {
+      margin: .3em 0 1em;
+    }
+    .news-item {
+      margin-bottom: 1.5em;
+    }
+  }
+  ol {
+    margin: 1em 0;
+    li {
+      font-size: 1.5em;
+      padding: .5em 0;
+      border-bottom: 1px solid $bordercolor;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+// DAMN PLUS Login form & summary boxes, see sidebar.scss
+//.damn-plus-login-form is there, as is .ws-plugin--s2member-pro-login-widget-profile-summary
+
+// DAMN PLUS profile page
+.profile-mods, .join-damn-plus-form {
+  .panel-body {
+    padding: 2em !important;
+    @media screen and (max-width: 767px) {
+      padding: 1.25em;
+    }
+    .btn {
+      margin-top: 1em;
+      font-size: 1.25em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+    }
+  }
+  .edit-profile {
+    @media screen and (min-width: 768px) {
+      border-right: 1px solid $bordercolor;
+    }
+  }
+  .cancel-button {
+  }
+}
+
+// profile form
+#ws-plugin--s2member-profile, .s2member-pro-paypal-form, .s2member-pro-paypal-checkout-form {
+  table {
+    td {
+      padding-bottom: 1em !important;
+      label {
+        width: 100%;
+        @media screen and (min-width: 768px) {
+          width: 97%;
+        }
+        input {
+          margin-top: .7em;
+        }
+      }
+    }
+  }
+  .s2member-pro-paypal-form-section {
+    padding-bottom: 1em !important;
+    label {
+      width: 100%;
+      @media screen and (min-width: 768px) {
+        width: 97%;
+      }
+      input, select {
+        margin: .7em 0;
+      }
+    }
+    .btn {
+      margin-top: 1em;
+      font-size: 1.25em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+    }
+  }
+  #s2member-pro-paypal-checkout-form-registration-section-title {
+    border-top: 1px solid $bordercolor;
+    padding-top: 1em;
+    margin-bottom: 1em;
+  }
+  #s2member-pro-paypal-checkout-form-coupon-div {
+    label {
+      width: auto !important;
+    }
+    #s2member-pro-paypal-checkout-coupon-apply {
+      display: block !important;
+    }
+  }
+  #s2member-pro-paypal-checkout-password1, #s2member-pro-paypal-checkout-password2 {
+    width: 97%;
+    max-width: 450px;
+  }
+  #s2member-pro-paypal-checkout-zip {
+    width: 250px;
+  }
+}
+
+// login
+body.login {
+  h3.widget-title {
+    text-align: center;
+    margin: -1px;
+  }
+}
+
+// Colophon
+
+.colophon {
+  margin-bottom: 1.5em;
+  .contributor-names {
+    span {
+      display: block;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  }
+  .column-1, .column-2, .column-3, .column-4 {
+    word-wrap: break-word;
+  }
+  .column-1, .column-3 {
+    @media screen and (min-width: 992px) {
+      text-align: right;
+    }
+  }
+  .col-ms-6 {
+    width: 50% !important;
+  }
+}
+
+

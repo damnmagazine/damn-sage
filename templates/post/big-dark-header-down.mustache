@@ -1,0 +1,136 @@
+{{> /partials/header-single}}
+
+<article class="big-header big-dark-header">
+	<div class="post-header">
+
+		{{#iterate}}
+
+		<img src="{{images.#.url}}" title="{{images.#.post_title}}" />
+		
+		<div class="absolute-bottom">
+			<div class="row">
+				<div class="col-md-offset-8 col-md-4 caption caption-right">
+					{{images.#.post_content}}
+				</div>
+			</div>
+		</div>
+		
+		{{/iterate}}
+		
+		<div class="absolute-bottom">
+			<div class="row">
+				<div class="col-md-7 col-lg-5 header-content">
+					
+					<h1>{{{post.post_title}}}</h1>
+					<h2>{{#get_field}}sub-title{{/get_field}}</h2>
+					
+					<p class="excerpt">
+						{{{post.post_excerpt}}}
+					</p>
+					
+					<author>
+						<a href="{{author.url}}">{{author.display_name}}</a>
+					</author>
+					
+					<date>{{date}}</date>
+					
+				</div>
+				<div class="col-lg-offset-2 col-lg-5 caption caption-right">
+					{{images.#.post_content}}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="post-content">
+
+		<div class="break-out-right">
+			{{#issue.brand}}
+				{{> /partials/robin-hood}}
+			{{/issue.brand}}
+			
+			{{^issue.brand}}
+				{{> /partials/ad-single}}
+			{{/issue.brand}}
+		</div>
+		
+		<div class="container">
+			
+			{{#has_video}}
+			<div class="row">
+				<div class="col-lg-9"> {{{video}}} </div>
+			</div>
+			{{/has_video}}
+			
+			<div class="row">
+				<div class="paragraph col-lg-9">
+					
+					{{#iterate}}<p>{{{paragraphs.#}}}</p>{{/iterate}}
+					{{#iterate}}<p>{{{paragraphs.#}}}</p>{{/iterate}}
+					
+					{{> /partials/image-captioned}}
+					
+					{{#iterate}}<p>{{{paragraphs.#}}}</p>{{/iterate}}
+					{{#iterate}}<p>{{{paragraphs.#}}}</p>{{/iterate}}
+					
+					{{> /partials/quote-tweet}}
+					
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-9">
+					
+					{{> /partials/image-captioned}}
+					
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="paragraph col-lg-9">
+					
+					{{#spill}}
+						<p>{{{paragraphs}}}</p>
+					{{/spill}}
+					
+				</div>
+			</div>
+			
+			{{#spill}}
+			<div class="row spill-quotes">
+				<div class="col-lg-12">
+					<div class="quote">
+						
+						{{quotes}}
+						<span class="tweet">
+							<i class='fa fa-twitter'></i>
+						</span>
+					</div>
+				</div>
+			</div>
+			{{/spill}}
+			
+			<div class='row'>
+			{{#spill}}
+			
+				<div class="image col-md-4">
+					<img src="{{images.url}}" title="{{images.post_title}}" />
+					
+					<span class="caption">
+						{{images.post_content}}
+					</span>
+				</div>
+			
+			{{/spill}}
+			</div>
+
+		</div>
+	</div>
+</article>
+
+<hr>
+
+{{> /partials/single-about}}
+
+<hr>

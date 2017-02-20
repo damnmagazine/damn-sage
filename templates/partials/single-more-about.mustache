@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row">
+		
+		<div class="col-sm-6 col-lg-4 col-lg-offset-2">
+			<h4>More About</h4>
+			{{#external_links}}
+			<ul class='external_links'>
+				<li><a href="{{url}}">{{url}}</a></li>
+			</ul>
+			{{/external_links}}
+		</div>
+		
+		<div class="col-sm-6 col-lg-4">
+
+			<ul class='keywords'>
+				
+				{{#categories}}
+				<li><a href="/category/{{slug}}">{{name}}</a></li>
+				{{/categories}}
+				
+				{{#tags}}
+				<li><a href="/tag/{{slug}}">{{name}}</a></li>
+				{{/tags}}
+				
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,107 @@
+{{> /partials/header-single}}
+
+<article class="long-read">
+		
+	<div class="container post-content">
+		
+		<div class="row">
+			
+			<div class="col-md-6">
+				
+				<!-- Text Column -->
+				<div class="row">
+					<div class="">
+						<h1>{{{post.post_title}}}</h1>
+						<h2>{{#get_field}}sub-title{{/get_field}}</h2>
+						
+						<date>{{date}}</date>
+					</div>
+					
+					{{#spill}}
+					
+						<br>
+						<div class="paragraph">
+							{{{paragraphs}}}
+						</div>
+						
+					
+					{{/spill}}
+					
+					<hr>
+					
+					<div>
+					<i>Read more</i>
+		
+						<ul class='external_links'>
+							{{#external_links}}
+							<li><a href="{{.}}">{{.}}</a></li>
+							{{/external_links}}
+							{{#brand.link}}
+							<li><a href="{{brand.link}}">{{brand.link}}</a></li>
+							{{/brand.link}}
+							{{#press_url}}
+							<li><a href="{{press_url}}" class="btn btn-primary">Press</a></li>
+							{{/press_url}}
+						</ul>
+						
+						<ul class='keywords'>
+							
+							{{#categories}}
+							<li><a href="/category/{{slug}}">{{name}}</a></li>
+							{{/categories}}
+							
+							{{#tags}}
+							<li><a href="/tag/{{slug}}">{{name}}</a></li>
+							{{/tags}}
+							
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			
+			<!-- Media Column -->
+			<div class="col-lg-offset-1 col-md-6 col-lg-5">
+				
+				<div>
+				{{#has_video}} {{{video}}} {{/has_video}}
+				{{^has_video}} {{> /partials/image-captioned}} {{/has_video}}
+				</div>
+				
+				{{#spill}}
+				<div class="image">
+					<img src="{{images.url}}" title="{{images.post_title}}" />
+					
+					<span class="caption" style='color: #333;'>
+						{{images.post_content}}
+					</span>
+				</div>
+				{{/spill}}
+				
+
+				<div class="col-md-offset-6 {{#issued}}col-xs-12 col-sm-8 {{/issued}}col-md-6">
+				
+					{{#issued}}
+					{{> /partials/magazine-relation}}
+					{{/issued}}
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12 social-row">
+				<div class='social-share'>
+					<i>Share this news</i>
+					<div class="addthis_custom_sharing"></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</article>
+
+<hr>
+
+{{> /partials/single-about}}
+

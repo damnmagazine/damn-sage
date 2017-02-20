@@ -1,0 +1,446 @@
+.home > header {
+	padding-top: 60px; 
+	height: 210px;
+	box-sizing: border-box;
+	background-position-y: top;
+	@media screen and (min-width: 1024px) { padding-top: 100px; height: 240px; }
+	@media screen and (min-width: 1280px) { padding-top: 120px; height: 280px; }
+	@media screen and (min-width: 1440px) { padding-top: 140px; height: 300px; }
+	@media screen and (min-width: 1600px) { padding-top: 150px; height: 320px; }
+	
+	.logo-container {
+		transform: translateY(-4%);
+	}
+}
+
+.title-wrapper {
+	padding-bottom: 20px !important;
+}
+
+body {
+	
+	& > header {
+		padding-top: 50px;
+		height: 138px;
+		background: no-repeat center;
+		background-size: 100% auto;
+		box-sizing: border-box;
+		
+		.logo-container {
+			max-width: 56%;
+			position: relative;
+			top: -20px;
+			
+			img {
+				float: left;
+				width: 320px;
+				margin: 0 10px 18px 0;
+			}
+			
+			.issue-selector {
+				float: left;
+				width: 72px;
+				height: 72px;
+				overflow: hidden;
+				font-weight: 400;
+				
+				ul {
+					min-width: 1000px;
+					padding: 0;
+					list-style: none;
+					position: relative;
+				
+					li {
+						float: left;
+						padding-right: 20px;
+						font-size: 64px;
+						line-height: 1.45em;
+						color: rgba(0,0,0,.4);
+						cursor: pointer;
+						
+						&:hover {
+							color: rgba(0,0,0,.8);
+						}
+						
+						a {
+							color: inherit;
+						}
+					}
+					
+					li.active {
+						font-weight: 700;
+					}
+				}
+			}
+			
+			.issue-buttons {
+				float: left;
+				padding-top: 18px;
+				
+				a, .fa { color: white; }
+				
+				div {
+					display: block;
+					padding: 4px 10px;
+					font-size: 20px;
+					
+					&:hover, &.inactive { opacity: .5; }
+				}
+			}
+				
+			h3 {
+				padding-top: 8px;
+				font-size: 1.2em;
+				font-weight: 200;
+				line-height: 1.32em;
+				clear: both;
+			}
+		}
+		
+		&.issued {
+			
+			.logo-container {
+				max-width: 100%;
+				
+				h3 { max-width: 58%; }
+		
+				.issue-selector { 
+					width: 71.2%;
+					
+					ul {
+						position: inherit;
+					}
+					
+					@media screen and (max-width: 1280px) { width: 64%; font-weight: 300; }
+					@media screen and (max-width: 1024px) { width: 58%; font-weight: 200; }
+				}
+				
+				
+			}
+	
+			.issue-buttons, .social-navs { display: none; }
+		}
+	}
+}
+
+
+/**
+ *	Mobile Overrides
+ *	Anything equal or lower then 768px. 
+ */
+.home {
+	@media screen and (max-width: 768px) {
+	
+		header {
+			background-size: cover;
+			padding-top: 20px; 
+			height: auto;
+			max-height: 200px;
+	
+			a.main-logo {
+				margin-right: .4em;
+				width: 200px;
+				height: 45px;
+			}
+			
+			.logo-container { 
+				max-width: 100%;
+				transform: none;
+				top: 0;
+				
+				.issue-selector {
+					width: 58px;
+					height: 60px;
+					li {
+						padding-right: 12px;
+						line-height: 1.4em;
+					}
+					
+					li, li a { font-size: 42px !important; }
+				}
+				
+				.issue-buttons {
+					padding-top: 10px;
+					
+					div {
+						font-size: 16px;
+						padding: 2px;
+					}
+				}
+				
+				h3	{ display: none; }
+			}
+			
+			&.issued .logo-container .issue-selector { 
+				width: 100%; 
+				
+				li { line-height: 1.2em; }
+			}
+		}
+	}
+}
+
+
+// !DEPRECATED!
+// home above nav wide featured content
+
+/*.home-feature {
+  background-color: $black;
+  margin-bottom: (30 / 16) * 1em;
+}
+
+body.single, body.tax-magazine, body.page {
+  .home-feature {
+    margin-bottom: 0;
+  }
+}*/
+// end home above nav wide featured content
+
+a.main-logo {
+  float: left;
+  margin-right: .9em;
+  width: 320px;
+  height: 71px;
+  display: block;
+  background: url("../images/damn-2X.png") no-repeat;
+  background: url("../images/damn-white.svg") no-repeat;
+  text-indent: -9999px;
+  outline: none;
+  background-size: 100% auto;
+  /*@media screen and (max-width: 480px) {
+    width: 140px;
+    height: 31px;
+  }
+  @media screen and (min-width: 481px) and (max-width:767px) {
+    width: 180px;
+    height: 40px;
+  }*/
+}
+
+
+// if text needs to be black
+.positive-contrast {
+  .single-news-item {
+    header {
+      .category-link a {
+        border-color: $black;
+        color: $black;
+        &:hover {
+          color: $white;
+        }
+      }
+      h1, h2, h3 {
+        @media screen and (min-width: 768px) {
+          text-shadow: 2px 2px 7px rgba(255,255,255,.4) !important;
+        }
+      }
+      h1 a {
+        color: $black;
+        &:hover {
+          color: $black;
+        }
+      }
+      .subtitle {
+        color: $black;
+      }
+    }
+  }
+  a.main-logo {
+   // @media screen and (min-width:768px) {
+      background: url("../images/damn-2X-black.png") no-repeat;
+      background: url("../images/damn.svg") no-repeat;
+   // }
+  }
+}
+
+.home .white-wrapper {
+  margin-bottom: 24px; 
+}
+
+.page-header {
+  margin-top: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+
+
+
+/* title wrappers */
+
+.title-wrapper, .title-wrapper-in-content {
+  text-align: center;
+  margin: 0;
+  padding: 2em 0 0 0;
+  background-color: $white;
+  clear: both;
+  h1, h3 {
+    // slightly different behavior on event archive, see a few lines below
+    margin: 0;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 2px solid $black;
+    padding-bottom: .4em;
+    font-size: 2.2em;
+  }
+  h3 {
+    font-size: 1.7em;
+    margin-bottom: 1em;
+  }
+}
+
+/* title wrapper - alternate behavior on page and taxonomy terms */
+body.tax-magazine, body.page {
+  .title-wrapper {
+    padding-bottom: 2em;
+    border-bottom: 1px solid $bordercolor;
+  }
+  .title-wrapper-in-content {
+    border-bottom: 0;
+    padding-bottom: .5em;
+  }
+}
+
+// title wrapper - alternate behavior on calendar and calendar search results
+body.post-type-archive-calendar, body[class^="calendar-"], body[class*=" calendar-"] {
+  .title-wrapper {
+    padding-bottom: 0;
+    border-bottom: 0;
+    h1 {
+      border: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+// title-wrapper h1 different on event archive
+body.post-type-archive-events {
+  .title-wrapper {
+    h1 {
+      border: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+body.single-events {
+  .title-wrapper {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+// Media list title-header
+body.page-media-list {
+  .title-wrapper {
+    background-color: $black;
+    color: $white;
+    border: 0;
+    h1 {
+      border: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+// taxonomy description for title wraper
+.taxonomy-description {
+  p {
+    margin: 1em 0 0 0;
+  }
+}
+
+// Issue Selector {
+ul#issue-selector {
+  float: left !important;
+  width: auto !important;
+  border: 0 !important;
+  @media screen and (max-width: 767px) {
+    margin: 0 !important;
+    display: none;
+  }
+  li.dropdown {
+    border: 0 !important;
+    a.dropdown-toggle {
+      padding: 0 10px 0 15px !important;
+      margin: 16px 0 0 0 !important;
+      width: 45px !important;
+      height: 60px !important;
+      line-height: 30px !important;
+      border: 0 !important;
+      color: $white !important;
+      @media screen and (max-width: 480px) {
+        margin: 0 !important;
+        height: 28px !important;
+        line-height: 28px !important;
+        .fa {
+          display: block !important;
+        }
+      }
+      @media screen and (min-width: 481px) and (max-width: 767px) {
+        margin: 8px 0 0 0 !important;
+        height: 30px !important;
+        .fa {
+          display: block !important;
+        }
+      }
+      &:hover {
+        border: 0 !important;
+        opacity: 0.5;
+      }
+    }
+    ul.dropdown-menu {
+      top: 30% !important;
+      left: 50px !important;
+      width: 374px !important;
+      text-align: center;
+      li {
+        border: 0 !important;
+        width: 124px !important;
+        float: left !important;
+        a {
+          border: 0 !important;
+        }
+      }
+    }
+  }
+  li.dropdown.open {
+    ul.dropdown-menu {
+      @media screen and (max-width: 900px) {
+        background-color: $white;
+        position: absolute !important;
+        top: 52px !important;
+        left: -200px !important;
+        width: 300px !important;
+        @media screen and (min-width: 481px) and (max-width: 767px) {
+          top: 102px !important;
+          width: 302px !important;
+        }
+      }
+      li {
+        @media screen and (max-width: 900px) {
+          background-color: $white;
+          width: 100px !important;
+        }
+      }
+    }
+  }
+}
+
+
+.positive-contrast {
+  ul#issue-selector {
+    li.dropdown {
+      a.dropdown-toggle {
+        @media screen and (min-width:768px) {
+          color: $black !important;
+        }
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+
+

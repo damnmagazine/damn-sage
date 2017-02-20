@@ -1,0 +1,131 @@
+{{> /partials/header-single}}
+
+<article class="one-per-block long-read">
+		
+	<div class="container post-content">
+		
+		<div class="row post-header">
+			
+			<div class="row">
+				{{> /partials/image-captioned}}
+			</div>
+		
+		</div>
+		
+		<div class="row">
+			<div class="col-md-8 col-lg-9 no-padding-left">
+				
+				<div class="post-header row">
+				
+					<h1>{{{post.post_title}}}</h1>
+					<h2>{{#get_field}}sub-title{{/get_field}}</h2>
+					
+					<p class="excerpt">
+						{{{post.post_excerpt}}}
+					</p>
+					
+					<author>
+						<a href="{{author.url}}">{{author.display_name}}</a>
+					</author>
+					
+					<date>{{date}}</date>
+				</div>
+				
+				{{#has_video}}
+				<div class="row"> {{{video}}} </div>
+				{{/has_video}}
+				
+				<div class="row paragraph">
+					{{#iterate}}
+						{{{paragraphs.#}}}
+					{{/iterate}}
+				</div>
+				
+				{{#spill}}
+				<div class="row paragraph">
+					
+					{{> /partials/image-captioned}}
+				
+					{{{paragraphs}}}
+
+				</div>
+				{{/spill}}
+				
+			</div>
+			<div class="col-md-4 col-lg-3">
+				
+				<div>
+				
+					{{#issue.brand}}
+						{{> /partials/robin-hood}}
+					{{/issue.brand}}
+					
+					{{^issue.brand}}
+						{{> /partials/ad-single}}
+					{{/issue.brand}}
+				
+				</div>
+				
+				<div>
+				
+					{{#issued}}
+						{{> /partials/magazine-relation}}
+					{{/issued}}
+					
+				
+				</div>
+				
+				<div>
+				
+					{{> /partials/quote-tweet}}
+				
+				</div>
+			</div>
+		</div>
+						
+		{{#spill}}
+		<div class="row spill-quotes">
+			<div class="col-md-12 col-lg-10 col-lg-offset-1">
+				<div class="quote">
+					
+					{{quotes}}
+					<span class="tweet">
+						<i class='fa fa-twitter'></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		{{/spill}}
+		
+		<div class="row">
+
+			{{#spill}}
+			
+				<div class="image col-sm-6">
+					<img src="{{images.url}}" title="{{images.post_title}}" />
+					
+					<span class="caption">
+						{{images.post_content}}
+					</span>
+				</div>
+			
+			{{/spill}}
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12 social-row">
+				<div class='social-share'>
+					<i>Share this beauty</i>
+					<div class="addthis_custom_sharing"></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</article>
+
+<hr>
+
+{{> /partials/single-about}}
+
+<hr>

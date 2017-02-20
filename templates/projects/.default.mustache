@@ -1,0 +1,180 @@
+<style type="text/css" media="screen">
+
+	body.single-events, body.positive-contrast { 
+		background-color:{{background-color}}!important;
+	}
+	.project-title-span, .sponsor-wrapper h2{
+		color:{{header-color}}!important;
+	}
+	.project-title-span:last-child{
+		border-bottom: 10px solid {{header-color}}!important;
+	}
+	.sponsor-wrapper h2{
+		border-top: 10px solid {{header-color}}!important;
+	}
+</style>
+
+<header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-sm-12 col-md-12">
+				
+				<div class="logo-container col-md-3">
+					<a href="/" title="home">
+						<img src="{{theme_path}}/dist/images/logo-positive.svg" alt="DAMN°" />
+					</a>
+				</div>
+				
+				<div class="col-md-9 project-title">
+					{{{custom_title}}}
+				</div>
+
+				<div class='social-share'>
+					<i>Share this momentum</i>
+					<div class="addthis_custom_sharing"></div>
+				</div>
+				
+			</div>
+
+		</div>
+</header>
+
+
+
+<div class="container post-content project-content">
+	
+	{{#image}}	
+	<div class="row">
+		<div class="col-sm-12 col-md-7">
+			
+			{{{post.post_content}}}
+			
+		</div>
+		<div class="col-sm-12 col-md-5">
+			
+			<img src="{{image}}" />
+			
+		</div>
+	</div>
+	{{/image}}
+	
+	{{^image}}	
+	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-12">
+
+			{{{post.post_content}}}
+
+		</div>
+	</div>
+	{{/image}}
+	
+	<br>
+
+	<div class="row">
+		<div class="col-md-8 col-lg-8 event-text-area">
+		{{{text_area}}}
+		</div>
+	</div>
+
+</div>
+
+<div class="container projects-main-container">
+
+	<div class="row">
+
+		<div class="col-sm-12 col-md-12 col-lg-12">
+
+			{{#rel_posts}}
+
+				<article class="item-project col-md-12 float-{{float}}">
+
+					<div class="row">
+						<div class="col-md-5 post-image" style="background-image: url({{thumb_url}})"><a class="home-img-link" href="{{permalink}}"></a></div>
+
+						<div class="col-md-7">
+							<a href="{{permalink}}" rel="bookmark" title="{{post_title}}">
+								<h1>{{post_title}} / <span class="description">{{place}}</span></h1></a>
+								<p class="designers">{{designers}}</p>
+
+								<p class="project-excerpt">{{post_excerpt}} <a href="{{permalink}}">...</a> <a class="projects-read-more" href="{{permalink}}"> Read More </a></p>
+
+						</div>
+
+					</div>
+
+				<hr>
+			</article>
+
+
+			{{/rel_posts}}
+
+			<div class="ajax-loaded"></div>
+
+		</div>
+
+		{{#load_more}}
+			<div class="ajax-load-more">
+				<a  href="">View All</a> / <span>Studios</span>
+			</div>
+		{{/load_more}}
+
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12 col-md-6 col-lg-6 sponsor-wrapper">
+			<h2 class="sponsor-name">{{{sponsor_name}}}</h2>	
+			<div class="sponsor-info">
+				{{{sponsor_information}}}
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+
+<div class="projects-before-footer">
+<div class="row ">
+	
+	<div class="col-md-1"></div>
+	<div class="col-md-5 align-right">
+		<i class="event-read-more">Read more</i>
+		<ul class='external_links event-external-links'>
+			{{#external_links}}
+			<li><a href="{{.}}">{{.}}</a></li>
+			{{/external_links}}
+			{{#brand.link}}
+			<li><a href="{{brand.link}}">{{brand.link}}</a></li>
+			{{/brand.link}}
+			{{#press_url}}
+			<li><a href="{{press_url}}" class="btn btn-primary">Press</a></li>
+			{{/press_url}}
+		</ul>
+		
+		<ul class='keywords'>
+			
+			{{#categories}}
+			<li><a href="/category/{{slug}}">{{name}}</a></li>
+			{{/categories}}
+			
+			{{#tags}}
+			<li><a href="/tag/{{slug}}">{{name}}</a></li>
+			{{/tags}}
+			
+		</ul>
+
+	</div>
+	<div class="col-md-5 social-row align-left">
+		<div class='social-share event-social-share'>
+			<i>Share this momentum</i>
+			<div class="addthis_custom_sharing"></div>
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+
+</div>
+
+
+</div>
+{{> /partials/sub-footer-projects}}

@@ -1,0 +1,526 @@
+/******************************************************************
+Site Name: DAMN Magazine
+Author: Mike Lythcott
+******************************************************************/
+
+/**
+ *	Overrides
+ */
+.btn-default, .btn-primary, body.damn-plus .title-wrapper, body.category-damn-plus .title-wrapper, body.login .main h3.widget-title, .back-to-calendar a.btn-primary, .article-navigation .pagination li span.current, .category-link .damn-plus {
+	color: #fff;
+}
+
+.category-link .damn-plus:hover {
+	color: #000 !important;
+}
+
+body.damn-plus .title-wrapper h1, body.category-damn-plus .title-wrapper h1 {
+	border-color: #fff;
+}
+
+.description {
+	color: $light-gray;
+	font-weight: 200;
+}
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $sans-serif;
+  font-weight: 400;
+  line-height: 1.5em;
+  font-size: 14px;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.wp-admin {
+  font-size: 100% !important;
+}
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 1.4em;
+}
+
+.clearthis {
+  clear:both;
+  display: block;
+  height: 1px;
+  line-height: 1px;
+}
+
+.displayBlock {
+  display: block !important;
+}
+
+.noMargin {
+  margin: 0 !important;
+}
+
+.marginRight {
+  margin-right: 1em !important;
+}
+
+.marginBottom {
+  margin-bottom: 1em !important;
+}
+
+.marginBottom15 {
+  margin-bottom: 1.5em !important;
+}
+
+.marginTop {
+  margin-top: 1em !important;
+}
+
+.marginTop2em {
+  margin-top: 2em !important;
+}
+
+.marginBottom2em {
+  margin-bottom: 2em !important;
+}
+
+.marginAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.black-back-white-text {
+  background-color: $black;
+  color: $white;
+}
+
+.whiteBackground {
+  background-color: $white !important;
+}
+
+.blackBackground {
+  background-color: $black !important;
+}
+
+.padding1em {
+  padding: 1em;
+}
+
+.bordered {
+  border: 1px solid $bordercolor;
+}
+
+.bottomBorderInline {
+  display: inline-block !important;
+  margin-bottom: 1em;
+  padding-bottom: 12px;
+  border-bottom: 2px solid $black;
+}
+
+.borderTopSpacing {
+  border-top: 1px solid $bordercolor;
+  padding-top: 1em;
+}
+
+.border-wrapper {
+  border: 1px solid $bordercolor;
+  padding: 1.25em;
+}
+
+.white-border-top {
+  border-top: 5px solid #fff;
+}
+
+.floatLeft100 {
+  @include floatleft100;
+}
+
+.noBackground {
+  background: none !important;
+}
+
+.positionRelative {
+  position: relative !important;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    background: none !important;
+    border-top:1px solid $bordercolor;
+    margin:2em 0;
+    padding:0;
+    clear: none !important;
+    @include floatleft100;
+    @media screen and (max-width: 767px) {
+      margin: 1.25em 0;
+    }
+}
+
+.above768 {
+  @media screen and (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.below768 {
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+sub {
+  bottom: 0 !important;
+}
+
+.boldText {
+  font-weight: 700;
+}
+
+.fullWidth {
+  width: 100% !important;
+}
+
+.colorWhite {
+  color: $white !important;
+}
+
+.whitecolor {
+  color: $white;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+  padding-bottom: 3em;
+}
+
+// body[class*=" calendar-"] {}
+
+body.single-calendar, body.tax-magazine, body.page, body.post-type-archive-calendar {
+  .wrap {
+    margin-top: 0em;
+  }
+}
+
+body.tax-magazine, body.single, body.damn-plus, body.page-subscribe, body.page-contributors, body.page {
+  .wrap {
+    @media screen and (max-width: 767px) {
+      margin-top: 2em;
+    }
+  }
+}
+
+.container {
+  width: 98%;
+  
+  @media screen and (min-width: 1024px) { width: 1000px; }
+  @media screen and (min-width: 1280px) { width: 1200px; }
+}
+
+.main {
+  @media screen and (max-width: 767px) {
+    margin-bottom: .5em;
+    padding-bottom: 0.5em;
+  }
+  @media (min-width: $screen-sm-min) {
+    width: auto !important;
+    float: none !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 767px) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+body.home, body.archive {
+  .main {
+    margin: 0 auto;
+  }
+}
+
+body.single, body.tax-magazine, body.page {
+  .main {
+    @media (min-width: $screen-sm-min) {
+      margin: 2em 255px 0 0px !important;
+    }
+    @media (min-width: $screen-md-min) {
+      margin: 2em 350px 0 0px !important;
+    }
+    @media (min-width: $screen-lg-min) {
+      margin: 2em 355px 0 0px !important;
+    }
+    @media (min-width: 1540px) {
+      margin: 2em 390px 0 0px !important;
+    }
+  }
+}
+
+body.page-template-page-magazine, body.page-colofon, body.page-colophon, body.page-search, body.page-media-list {
+  .main {
+    margin: 0 auto !important;
+  }
+}
+
+/* 404 */
+body.error404 {
+  .page-header {
+    text-align: center;
+    h1 {
+      text-transform: uppercase;
+      font-size: 5em;
+    }
+  }
+}
+
+/* see sidebar.scss for sidebar settings */
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+  color: $link-color;
+  @include transitions;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: $link-hover;
+    text-decoration: none;
+  }
+
+  &:active {}
+
+  &:link {
+    -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+  }
+}
+
+a.black-link, a.black-link:visited {
+  color: $black;
+  &:hover {
+    color: lighten($black, 15%);
+  }
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+// Headers
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.2;
+  text-rendering: optimizelegibility;
+  font-weight: 400;
+  margin-top: 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+h1, .h1 { font-size: (36 / 16) * 1em; }
+h2, .h2 { font-size: (30 / 16) * 1em; }
+h3, .h3 { font-size: (24 / 16) * 1em; }
+h4, .h4 { font-size: (18 / 16) * 1em; }
+h5, .h5 { font-size: (16 / 16) * 1em; }
+h6, .h6 { font-size: (12 / 16) * 1em; }
+
+/*********************
+IMAGE
+*********************/
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/*********************
+VERTICAL RHYTHYM
+*********************/
+
+header, nav, .main, .sidebar, footer, .single-news-item, .single-video-item, .single-gallery-item, .wrap,
+p, .relative-header, .title-wrapper.event-specific, .single-event-item {
+
+	@media screen and (max-width: 767px) {
+		:not(p) { font-size: 13px; }
+	}
+	@media screen and (min-width: 1280px) { font-size: 15px; }
+	@media screen and (min-width: 1440px) { font-size: 16px; }
+}
+
+/*********************
+LOGO
+*********************/
+
+/* see header.scss */
+
+/*********************
+INPUT
+*********************/
+
+// input options
+.input-lg {
+  font-size: 1em;
+}
+
+/*********************
+PADDING & MARGINS
+*********************/
+
+// custom padding
+.paddingTop {
+  padding-top: 1.5em;
+}
+
+.paddingBottom {
+  padding-bottom: 1.5em;
+}
+
+/*********************
+LISTS
+*********************/
+
+.list-unstyled {
+  li {
+    line-height: 2em;
+  }
+}
+
+.hentry {
+  ul, ol {
+    margin: 0 0 1.3em 0;
+    padding: 0;
+    list-style: none;
+    li {
+      list-style: none;
+      padding: .25em 0;
+    }
+  }
+}
+
+/*********************
+NAVIGATION
+*********************/
+
+.article-navigation {
+  padding: 0 0 2em 0px;
+  text-align: center;
+  ul.pagination {
+    span.current {
+      color: $black;
+    }
+    li {
+      color: $medium-gray;
+      a {
+        color: $black;
+        &:hover {
+          color: $white;
+          background-color: $black;
+        }
+      }
+    }
+  }
+}
+
+/*********************
+ADVERTS
+*********************/
+
+.advert {
+  .g img {
+    margin: 0 auto;
+  }
+}
+
+.advert-sidebar-top, .advert-sidebar-bottom {
+  border-bottom: 1px solid $bordercolor;
+  .g img {
+    margin-top: .8em;
+    margin-bottom: .8em;
+    @media screen and (max-width: 991px) {
+      padding: 0 .8em;
+    }
+    @media (min-width: 1540px) {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+.footer-advert {
+  padding: 3em 0;
+  img {
+    margin: 0 auto;
+  }
+}
+
+/*********************
+MISC
+*********************/
+
+.fourohfour {
+  h2 {
+    font-size: 8em;
+  }
+}
+
+.button-box {
+  padding: 0 1em 1em 1em;
+  .btn {
+    margin-top: .8em;
+  }
+}
+
+.borderedBox {
+  border: 1px solid $bordercolor;
+  padding: 1.5em;
+  margin-bottom: 1.25em;
+  width: 100%;
+}
+
+.calendar-box {
+  @include blockfloat;
+  margin: .5em 1em .5em 0;
+  text-align: center;
+  color: $white;
+  width: 100px;
+  height: 100px;
+  border: 1px solid $bordercolor;
+  @include border-radius(100px);
+  background: rgba(255,255,255,0.1);
+  span {
+    display: block;
+  }
+  span.month {
+    text-transform: uppercase;
+    padding-top: .4em;
+  }
+  span.day {
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: .9em;
+    padding: 0;
+  }
+  span.year {
+  }
+}
+
+
+
+
+

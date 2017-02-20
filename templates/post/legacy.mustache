@@ -1,0 +1,118 @@
+{{> /partials/header-single}}
+
+<article class="long-read legacy">
+		
+	<div class="container post-content">
+		
+		<div class="row">
+			<div class="col-md-7">
+				
+				<!-- Content Row -->
+				<div class="row">
+					
+					<div class="col-md-12">
+						
+						<h1>{{{post.post_title}}}</h1>
+						<h2>{{#get_field}}sub-title{{/get_field}}</h2>
+						
+						<date>{{date}}</date>
+						<br><br>
+					</div>
+
+					<div class="col-md-12 paragraph">
+						{{#iterate}}
+							{{{paragraphs.#}}}
+						{{/iterate}}
+					</div>
+					
+					<div class="col-md-12 paragraph">
+						{{#iterate}}
+							{{{paragraphs.#}}}
+						{{/iterate}}
+					</div>
+					
+					<div class="col-md-12 paragraph">
+						{{#iterate}}
+							{{{paragraphs.#}}}
+						{{/iterate}}
+					</div>
+					
+				
+				</div>
+				
+			</div>
+			<div class="col-md-5">
+				
+				<!-- Media Row -->
+				<div class="row">
+					
+					<div class="col-md-12">{{> /partials/image-captioned}}</div>
+				</div>
+				
+				
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6">
+				{{#spill}}
+					<div class="row">
+						<div class="paragraph">
+							{{{paragraphs}}}
+						</div>
+					</div>
+				{{/spill}}
+			</div>
+			
+			<div class="col-md-6">
+				
+				{{#spill}}
+					<div class="image">
+						<img src="{{images.url}}" title="{{images.post_title}}" />
+						
+						{{#contrast}}
+							<span class="caption title-light">
+								{{images.post_content}}
+							</span>
+						{{/contrast}}
+
+						{{^contrast}}
+							<span class="caption title-dark">
+								{{images.post_content}}
+							</span>
+						{{/contrast}}
+
+					</div>
+				{{/spill}}
+				
+				
+				<div class="col-md-offset-8 {{#issued}}col-xs-12 col-sm-8 {{/issued}}col-md-4">
+				
+					{{#issued}}
+					{{> /partials/magazine-relation}}
+					{{/issued}}
+					
+				</div>
+
+				
+			</div>
+		</div>
+		
+		
+		<div class="row">
+			<div class="col-md-12 social-row">
+				<div class='social-share'>
+					<i>Share this beauty</i>
+					<div class="addthis_custom_sharing"></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</article>
+
+<hr>
+
+{{> /partials/single-about}}
+
+<hr>

@@ -1,0 +1,237 @@
+<style type="text/css" media="screen">
+	/**
+	 * Style all colors based on event # color
+	 */ 
+	body.single-events, body.positive-contrast { 
+		background-color: {{background.color}} !important;
+		{{#background.image}}background-image: url({{background.image}});{{/background.image}}
+	}
+</style>
+
+<header>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-11">
+				
+				<div class="logo-container">
+					<a href="/" title="home">
+					{{#contrast}}<img src="{{theme_path}}/dist/images/logo-positive.svg" alt="DAMN°" />{{/contrast}}
+					{{^contrast}}<img src="{{theme_path}}/dist/images/logo-negative.svg" alt="DAMN°" />{{/contrast}}
+					</a>
+					
+					<div class="event-title col-md-8">
+					{{{post.post_title}}}
+					</div>
+					
+				</div>
+				
+				<div class='social-share event-social-share'>
+					<i>Share this momentum</i>
+					<div class="addthis_custom_sharing"></div>
+				</div>
+				
+			</div>
+			<div class="col-md-1">
+				
+				{{> /partials/snippets/cal-icon}}
+							
+			</div>
+		</div>
+</header>
+
+<div class="container post-content">
+	
+	{{#image}}	
+	<div class="row">
+		<div class="col-sm-12 col-md-7  event-description">
+			
+			{{{post.post_content}}}
+			
+		</div>
+		<div class="col-sm-12 col-md-5">
+			
+			<img src="{{image}}" />
+			
+		</div>
+	</div>
+	{{/image}}
+	
+	{{^image}}	
+	<div class="row">
+		<div class="col-md-12 col-lg-12 event-description">
+
+			{{{post.post_content}}}
+
+			{{#issuu_post}}
+				<br>
+				<br>
+				Check our Cathalog <a href="{{issuu_post}}">here!</a>
+			{{/issuu_post}}
+
+		</div>
+	</div>
+	{{/image}}
+
+
+	<div class="row">
+		<div class="col-md-12 col-lg-12 event-text-area">
+		{{{text_area}}}
+		</div>
+	</div>
+	
+
+
+	<div class="row">
+
+		<div class="col-sm-12 col-md-12 col-lg-8 ">
+		{{#iterate}}
+				
+			{{#posts.#}}
+			{{> /partials/items/highlight-post-free}}
+			{{/posts.#}}
+			
+		{{/iterate}}			
+		</div>
+		
+		<div class="col-sm-12 col-md-12 col-lg-4">
+			{{#facebook_shortcode}}
+				<h2 class= "facebook-stream-title"><a href="https://www.facebook.com/DAMnmagazine-27113480473" target="_blank">Facebook Stream</a></h2>
+
+				{{{facebook_shortcode}}}
+
+			{{/facebook_shortcode}}
+
+			{{^facebook_shortcode}}
+				{{#offset_posts}}
+					<a href="/{{post_name}}">
+						
+						{{#fallback_image_url}}
+							<div class="item event-post" style="background-image:url({{fallback_image_url}});">
+						{{/fallback_image_url}}
+
+						{{^fallback_image_url}}
+							<div class="item event-post" style="background-image:url({{thumbnail}});">
+						{{/fallback_image_url}}
+
+							<div class="bg-fade post-title">
+							
+								{{post_title}}
+								<i class='sub-title'>{{subtitle}}</i>
+								
+							</div>
+					
+						</div>
+					</a>
+				{{/offset_posts}}
+			{{/facebook_shortcode}}
+
+		</div>
+
+	</div>
+
+
+	<div class="row">
+
+		{{#rel_posts}}
+		<div class="col-sm-12 col-md-6 col-lg-4">
+			<a href="/{{post_name}}">
+				
+				{{#fallback_image_url}}
+					<div class="item event-post" style="background-image:url({{fallback_image_url}});">
+				{{/fallback_image_url}}
+
+				{{^fallback_image_url}}
+					<div class="item event-post" style="background-image:url({{thumbnail}});">
+				{{/fallback_image_url}}
+					
+					<div class="bg-fade post-title">
+						
+						{{post_title}}
+						<i class='sub-title'>{{subtitle}}</i>
+						
+					</div>
+			
+				</div>
+			</a>
+		</div>
+		{{/rel_posts}}
+
+	</div>
+
+</div>
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-sm-8 col-md-3 col-lg-3">
+			<a href="{{brand.logo}}" target="_blank">
+				<img src="{{brand.logo}}" title="{{brand.post_title}}" />
+			</a>
+		</div>
+
+		<div class="col-sm-12 col-md-7 col-lg-9">
+			<a href="{{calnode.url}}">
+				
+				<h2>{{calnode.post_title}}</h2>
+				<h4>
+					{{#subtitle}}{{subtitle}}{{/subtitle}}
+					{{^subtitle}}{{calnode.start}} - {{calnode.end}}{{/subtitle}}
+				</h4>
+			</a>
+
+			<div class="event-social">
+				{{#post.social_twitter}}
+					<a href="{{post.social_twitter}}" target="_blank"><i class="ion-social-twitter"></i></a>
+				{{/post.social_twitter}}
+				{{#post.social_facebook}}
+					<a href="{{post.social_facebook}}" target="_blank"><i class="ion-social-facebook"></i></a>
+				{{/post.social_facebook}}
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="col-md-6 align-right">
+		<i class="event-read-more">Read more</i>
+		
+		<ul class='external_links event-external-links'>
+			{{#external_links}}
+			<li><a href="{{.}}">{{.}}</a></li>
+			{{/external_links}}
+			{{#brand.link}}
+			<li><a href="{{brand.link}}">{{brand.link}}</a></li>
+			{{/brand.link}}
+			{{#press_url}}
+			<li><a href="{{press_url}}" class="btn btn-primary">Press</a></li>
+			{{/press_url}}
+		</ul>
+		
+		<ul class='keywords'>
+			
+			{{#categories}}
+			<li><a href="/category/{{slug}}">{{name}}</a></li>
+			{{/categories}}
+			
+			{{#tags}}
+			<li><a href="/tag/{{slug}}">{{name}}</a></li>
+			{{/tags}}
+			
+		</ul>
+
+	</div>
+	<div class="col-md-6 social-row align-left">
+		<div class='social-share event-social-share'>
+			<i>Share this momentum</i>
+			<div class="addthis_custom_sharing"></div>
+		</div>
+	</div>
+</div>
+
+{{> /partials/sub-footer-event}}

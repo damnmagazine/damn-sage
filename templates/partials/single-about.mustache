@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		
+		<div class="col-sm-6 col-lg-4 col-lg-offset-2">
+			<h4>More About</h4>
+			{{#external_links}}
+			
+			<ul class='external_links'>
+				<li><a href="{{url}}">{{url}}</a></li>
+			</ul>
+			{{/external_links}}
+
+			<ul class='keywords'>
+				
+				{{#categories}}
+				<li><a href="/category/{{slug}}">{{name}}</a></li>
+				{{/categories}}
+				
+				{{#tags}}
+				<li><a href="/tag/{{slug}}">{{name}}</a></li>
+				{{/tags}}
+				
+			</ul>
+			
+		</div>
+		{{#author.description}}
+		<div class="col-sm-6 col-lg-4 author">
+			
+			<a href="{{author.url}}" class='profile'>View Profile</a>
+			
+			{{#author.avatar}}
+				<div class='avatar'>
+					<img src="{{url}}" />
+				</div>
+			{{/author.avatar}}
+
+			<h4>{{author.display_name}}</h4>
+
+			{{{author.description}}}
+		</div>
+		{{/author.description}}
+	</div>
+</div>

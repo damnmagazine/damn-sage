@@ -1,0 +1,30 @@
+<style type="text/css" media="screen">
+	/**
+	 * Style all colors based on issue # color
+	 */ 
+	a, a:visited, .issue-color, .logo-container .issue-selector li.active, .issue-news { color: {{issue.color}}; }
+	.damn-plus-info, .post-image { background-color: {{issue.color}}; }
+</style>
+
+<header class='news'>
+	<div class="container">
+		
+		<div class="logo-container">
+			<a href="/" title="home">
+				{{#contrast}}<img src="{{theme_path}}/dist/images/logo-positive.svg" alt="DAMN°" />{{/contrast}}
+				{{^contrast}}<img src="{{theme_path}}/dist/images/logo-negative.svg" alt="DAMN°" />{{/contrast}}
+			</a>
+	
+			<a class="issue-news" href="/category/news">NWS</a>	
+		</div>
+		
+		<nav>
+			{{{navigation}}}
+		</nav>
+		
+		<div class='social-share'>
+			<i>Share this news</i>
+			<div class="addthis_custom_sharing"></div>
+		</div>
+	</div>
+</header>

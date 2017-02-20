@@ -1,0 +1,18 @@
+{{#iterate}}
+<div class='image'>
+	<img src="{{images.#.url}}" title="{{images.#.post_title}}" />
+	
+	{{#contrast}}
+		<div class='caption caption-black'>
+			{{images.#.post_content}}
+		</div>
+	{{/contrast}}
+	{{^contrast}}
+		<div class='caption caption-white'>
+			{{images.#.post_content}}
+		</div>
+	{{/contrast}}
+	
+</div>
+
+{{/iterate}}

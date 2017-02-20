@@ -1,0 +1,619 @@
+
+// MOBILE NAV + mobile toggle open/close
+
+a.mobile-menu {
+  background: center center no-repeat transparent;
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  text-align: center;
+  line-height: 40px;
+  color: $white;
+  font-size: 28px;
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+  @media screen and (min-width: 600px) {
+    top: 20px;
+  }
+}
+
+#my-menu.mm-opened {
+  display: block !important;
+  .mm-navbar {
+    font-size: 20px !important;
+    .mm-close:before {
+       font-family: FontAwesome;
+       content: "\f00d";
+       display: inline-block;
+       padding-right: 3px;
+       vertical-align: middle;
+       color: $white;
+    }
+    .mm-close:after {
+      display: none;
+    }
+  }
+  .mm-arrow:after, .mm-next:after {
+    color: $white;
+  }
+}
+
+	
+/*#menu-main-nav {
+li {
+  float: none !important;
+  a {
+    text-transform: uppercase !important;
+    font-size: 1.25em !important;
+    padding: 15px 10px 15px 20px !important;
+    &:hover {
+      color: $white !important;
+    }
+  }
+}
+
+}*/
+
+nav.navbar-default { 
+	
+	background-color: transparent;
+	border-top-width: 1px;
+	
+	
+	/*
+	 *	Mobile view
+	 */
+	.navbar-header {
+
+		@media screen and (min-width: 768px) { display: none; }
+	}
+	
+	/*
+	 *	Navigation
+	 */
+	ul.nav {
+		width: 100%;
+		
+		li {
+			a, a:visited {
+				padding: 0 1em;
+				border-right: 1px solid $white;
+				border-left: 1px solid $white;
+				font-size: 1.25em;
+				font-weight: 700;
+				line-height: 3em;
+				color: $black;
+				text-transform: uppercase;
+				&:hover {
+					background: none !important;
+					border-color: $bordercolor;
+				}
+			}
+			
+		}
+		@media screen and (max-width: 767px) { 
+			li.search { display: none; }
+			li.pull-left { float: none !important; }
+		}
+		@media screen and (min-width: 768px) {
+			
+			li:first-child {
+				a {
+					padding-left: 0;
+					border-left: none;
+				}
+			}
+			
+			li.small-text {
+				float: right;
+				
+				a {
+					padding: 8px 1em;
+					font-size: .9em;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	 	
+	/*
+	 *	Search bar
+	 */
+	#search-bar {
+		background-color: $white;
+		font-size: inherit;
+		.search-large {
+			padding: 10px 0;
+			opacity: 0;
+			font-size: inherit;
+			.input-group {
+				input.search-field {
+					padding: 8px;
+					font-size: inherit;
+					border: none;
+					border-radius: 2px 0 0 2px;
+				}
+				button {
+					background-color: rgba(255,255,255, .12) !important;
+					border-radius: 0 2px 2px 0;
+					padding: 4px 12px 5px;
+					border: none;
+					font-size: inherit;
+					color: $white !important;
+					
+					&:hover, &:active { background-color: #000 !important; }
+				}
+				
+				button i { font-size: 1.24em; }
+			}
+		}
+		
+		&.collapse.in .search-large { opacity: 1; }
+	}
+
+}
+
+/*
+// main navbar in header
+.home-feature {
+  // spacing up to 767px because of fixed logo, issue selector
+  @media screen and (max-width: 480px) {
+    padding-top: 66px !important;
+  }
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    padding-top: 77px !important;
+  }
+  .header-wrapper {
+    width: 100%;
+    padding: (30 / 16) * 1em 0;
+    background-position: center;
+
+    @media screen and (max-width:767px) {
+      padding: 1.25em 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10000;
+      background-image: none !important;
+      background-color: $black;
+    }
+    .container {
+      @media screen and (max-width: 1199px) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    .issue-number {
+      font-size: 4.5em;
+      font-weight: 700;
+      display: block;
+      float: left;
+      margin-top: 20px;
+      line-height: 0.8em;
+      @media screen and (max-width: 480px) {
+        margin-top: 4px;
+        font-size: 3em;
+      }
+      @media screen and (min-width: 481px) and (max-width:767px) {
+        margin-top: 9px;
+        font-size: 3.5em;
+      }
+      @media screen and (min-width: 768px) and (max-width:1199px) {
+        margin-top: 28px;
+        line-height: .7em;
+      }
+    }
+  }
+}
+
+/*
+.navbar-default {
+  // background-color: $white;
+  background: none;
+  border: 0;
+  // border-bottom: 1px solid $bordercolor;
+  margin-bottom: 0;
+}*/
+
+/*.main-navigation {
+  border: 0;
+  padding: 0 !important;
+
+  // Main nav (always visible)
+  .menu-main-nav-container {
+    padding: 0;
+  }
+}*/
+
+// Nav structure
+ul.nav {
+  //width: 100%;
+  
+  li {
+    a, a:visited {
+      //font-size: (20 / 16) * 1em;
+      //color: $black !important;
+      //padding: 0 (20 / 16) * 1em;
+      //line-height: 60px;
+      //text-transform: uppercase;
+      //font-weight: 700;
+      //border-bottom: 0;
+      //@include transitions;
+      //border-right: 1px solid $white;
+      //border-left: 1px solid $white;
+      /*@media screen and (min-width: 768px) and (max-width: 899px) {
+        font-size: .88em;
+        padding: 0 .5em;
+        line-height: 40px;
+      }
+      @media screen and (min-width: 900px) and (max-width: 991px) {
+        font-size: 1em;
+        padding: 0 .7em;
+        line-height: 40px;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        font-size: 1em;
+        padding: 0 0.65em;
+      }
+      @media screen and (min-width: 1200px) and (max-width: 1399px) {
+        font-size: 1.1em;
+        padding: 0 (16 / 16) * 1em;
+      }
+      @media screen and (min-width: 1400px) and (max-width: 1539px) {
+        font-size: 1.25em;
+        padding: 0 (16 / 16) * 1em;
+      }*/
+      /*&:hover {
+        color: $black;
+        background: none !important;
+        border-color: $bordercolor;
+      }*/
+    }
+    &:first-child {
+      a {
+        //padding-left: 0;
+        //border-left: none;
+        /*&:hover {
+          padding-left: (20 / 16) * 1em;
+          @media screen and (min-width: 768px) and (max-width: 991px) {
+            padding-left: .5em;
+          }
+          @media screen and (min-width: 992px) and (max-width: 1199px) {
+            padding-left: 0.9em;
+          }
+          @media screen and (min-width: 1200px) and (max-width: 1539px) {
+            padding-left: (16 / 16) * 1em;
+          }
+        }*/
+      }
+    }
+  }
+  li.search {
+    font-size: 1em;
+    a {
+      padding: 0;
+      border-right: none;
+      
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        line-height: 40px;
+      }
+      i {
+        display: block;
+        padding: 0 0 0 1.25em;
+        line-height: 60px;
+        @include transitions;
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          line-height: 40px;
+          padding: 0 0 0 .5em;
+        }
+      }
+       /*&:hover {
+       i {
+          padding-right: (20 / 16) * 1em;
+          @media screen and (min-width: 768px) and (max-width: 1199px) {
+            padding-right: .5em;
+            padding-left: .5em;
+          }
+        }
+      }*/
+    }
+  }
+  li li a {
+    font-weight: 400;
+  }
+  li.active, li.open {
+    /* see border for active state at the bottom under Boostrap Overrides */
+    a {
+      border-left: 1px solid $bordercolor !important;
+      border-right: 1px solid $bordercolor !important;
+      background: none !important
+    }
+    &:first-child {
+      a {
+        padding-left: (20 / 16) * 1em;
+        padding-left: (20 / 16) * 1em;
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          padding-left: .5em;
+        }
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+          padding-left: 0.9em;
+        }
+        @media screen and (min-width: 1200px) and (max-width: 1539px) {
+          padding-left: (17 / 16) * 1em;
+        }
+      }
+    }
+  }
+}
+  // dropdown
+  .dropdown-menu {
+    margin: 1px 0 0 0;
+    padding: 0;
+    border-top: 0 !important;
+    width: 200px;
+    li {
+      a {
+        padding: 0 1.25em !important;
+        font-size: 1.1em !important;
+        line-height: 40px !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid $white;
+        &:hover {
+          border-bottom: 1px solid rgba(0,0,0,.15);
+          background: none !important;
+        }
+      }
+    }
+    li.active {
+      a {
+        border-bottom: 1px solid rgba(0,0,0,.15);
+        border-top: 1px solid rgba(0,0,0,.15);
+        background: none !important;
+      }
+    }
+    li:last-child {
+      a {
+        border-bottom: 0;
+      }
+    }
+  }
+
+
+/*body.page-search {
+  ul.nav li.search.active {
+    a {
+      padding-right: (20 / 16) * 1em;
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        padding-right: .5em;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+        padding-right: 0.9em;
+      }
+      @media screen and (min-width: 1200px) and (max-width: 1539px) {
+        padding-right: (17 / 16) * 1em;
+      }
+    }
+  }
+}*/
+
+// social nav in header
+
+.social-navs {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+// margin-top: 1em;
+}
+
+// social nav
+ul.social-nav {
+  background: rgba(0,0,0,.4);
+  padding: 0 1em;
+  margin-right: -.75em;
+  border-radius: 2px;
+ 
+  li {
+    @include blockfloat;
+    a, a:visited {
+      font-size: (18 / 16) * 1em;
+      // for color for black header, see .positive-contrast below
+      color: $white !important;
+      padding: 0 (12 / 16) * 1em;
+      line-height: 50px;
+      @include transitions;
+      @include opacity(1);
+      &:hover {
+        color: $black;
+        @include opacity(.5);
+      }
+      @media screen and (max-width: 767px) {
+        line-height: 30px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        padding: 0 (10 / 16) * 1em;
+      }
+      @media screen and (min-width: 992px) {
+        padding: 0 1em;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1200px) {
+        padding: 0 (10 / 16) * 1em;
+      }
+    }
+  }
+  li:first-child a {
+    padding-left: 0;
+    border-radius: 2px 0 0 2px;
+  }
+  li:last-child a {
+    padding-right: 0;
+	border-radius: 0 2px 2px 0;
+  }
+}
+
+// color of social icons and background for social icons while in .positive-contrast css setting`
+.positive-contrast {
+  .social-navs {
+    ul.social-nav {
+      background: rgba(255,255,255,.4);
+      li {
+        a {
+          color: $black !important;
+        }
+      }
+    }
+  }
+}
+
+// HEADHESIVE STICK NAV OPTIONS
+
+/* before scroll or in "unstick" mode, hide 
+.headhesive {
+  @include position(fixed, $top: -60px, $left: 0);
+  @include opacity(0);
+  border-bottom: 1px solid $bordercolor;
+  @media screen and (max-width: 767px) {
+    display: none !important;
+  }
+  .container {
+    @media screen and (max-width: 991px) {
+      width: 98% !important;
+    }
+  }
+  .container {
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      width: 98% !important;
+    }
+  }
+  .main-navigation {
+    padding: 0 !important;
+    @media screen and (min-width: 992px) and (max-width: 1049px) {
+      ul.nav li a {
+        padding: 0 .7em;
+      }
+    }
+    @media screen and (min-width: 1050px) and (max-width: 1199px) {
+      ul.nav li a {
+        padding: 0 .9em;
+      }
+    }
+    // search specific
+    @media screen and (min-width: 992px) and (max-width: 1199px) {
+      ul.nav li.search a i {
+        padding: 0 .5em;
+      }
+    }
+  }
+  ul.social-nav {
+    background: none !important;
+    li a {
+      color: $black !important;
+      line-height: 60px;
+    }
+  }
+}*/
+
+/* when scroll past the header, in active "stick" mode 
+.headhesive--stick {
+  display: block;
+  @include position(fixed, $top: 0, $left: 0);
+  @include opacity(0.97);
+  z-index: 1001;
+  width: 100%;
+  @include transition200ms;
+  .main-navigation {
+    .menu-main-nav-container {
+      // normal nav when stick is active - set to auto width
+      @include blockfloat;
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        width: 100%;
+      }
+      ul.nav li a {
+        font-size: .8em;
+        @media screen and (min-width: 900px) and (max-width: 991px) {
+          font-size: .9em;
+        }
+        @media screen and (min-width: 992px) and (max-width: 1050px) {
+          font-size: .78em;
+        }
+        @media screen and (min-width: 1400px) {
+          font-size: .9em;
+        }
+      }
+      li.home-menu {
+        // show the home menu when in headhesive stick mode
+        display: block;
+      }
+    }
+    // social menu visible on stick
+    .menu-socials-header-container {
+      display: block;
+      float: right;
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
+  .container {
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      width: 96% !important;
+    }
+  }
+}
+
+// Show stick nav if logged in as admin
+body.logged-in {
+  .headhesive--stick {
+    top: 29px;
+  }
+}
+
+// NAV options for DAMN Plus based on logged in or not
+ul.nav {
+  li.logged-in {
+    display: none;
+  }
+}
+
+body.logged-in {
+  .logged-out {
+    display: none !important;
+  }
+  .logged-in {
+    display: block !important;
+  }
+}*/
+
+/* bootstrap override */
+
+
+/* activator for fixed nav. Needs white background so black of header background doesn't show */
+.fixed-nav-activator {
+  background: none;
+  margin-top: -1px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+
+#wpadminbar {
+  @media screen and (max-width: 600px) {
+    position: fixed;
+  }
+}
+
+/*body.logged-in {
+  #my-menu {
+    margin-top: 46px;
+  }
+}*/
+
+// header search
+
+

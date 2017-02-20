@@ -1,0 +1,389 @@
+.sidebar {
+  margin: 0 0 2.5em 0;
+  border-left: 1px solid $bordercolor;
+  border-right: 1px solid $bordercolor;
+  @media screen and (max-width: 767px) {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    clear: both;
+  }
+  @media (min-width: $screen-sm-min) {
+    width: 230px;
+    float: right;
+    padding: 0;
+    margin: 0 0 2.5em 0;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 320px;
+  }
+  @media (min-width: 1540px) {
+    width: 360px;
+  }
+  .sidebar-padding {
+    padding: 1.5em;
+  }
+}
+
+.sidebar.is_stuck {
+  @media screen and (max-width: 767px) {
+    position: relative !important;
+  }
+}
+
+.sidebar, .widget {
+  ul, ol {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    li {
+      padding: 1em;
+      border-bottom: 1px solid $bordercolor;
+      @include transitions;
+      &:hover {
+        background-color: $grayhovercolor;
+      }
+    }
+    li:first-child {
+      border-top: 1px solid $bordercolor;
+    }
+  }
+  ol {
+    li {
+      padding: 1em 1em 1em 1.25em;
+      @media screen and (max-width: 767px) {
+        padding: .75em .5em .75em 1em;
+      }
+    }
+  }
+}
+
+h3.widget-title, h3.widget-title-black {
+  // see below for padding for sidebar specific widgets, as they have padding on all sides, others, only top/bottom
+  margin: 0;
+}
+h3.widget-title-black {
+  @include blackbackwhitetext;
+}
+
+.widget {
+  h3.widget-title, h3.widget-title-black, h3 {
+    padding: (16 / 16) * 1em 0;
+  }
+}
+
+.sidebar {
+  .widget {
+    h3.widget-title, h3.widget-title-black, h3 {
+      padding: (16 / 16) * 1em;
+    }
+  }
+}
+
+// DAMN PLUS related
+.damn-plus-login-form {
+  margin: 0;
+  h3 {
+    margin: 0;
+    padding: (16 / 16) * 1em !important;
+    border-bottom: 1px solid $bordercolor;
+  }
+}
+
+.damn-plus-login-form.color-box {
+  padding: 2em .25em;
+}
+
+.ws-plugin--s2member-pro-login-widget {
+  padding: 1.5em;
+  .form-control {
+    margin-bottom: 1em;
+  }
+  .ws-plugin--s2member-pro-login-widget-remember-me {
+    input {
+      margin-right: 6px;
+    }
+  }
+  .btn-primary {
+    font-size: 1.25em;
+    margin-top: .75em;
+  }
+}
+
+.ws-plugin--s2member-pro-login-widget-profile-summary {
+  .avatar {
+    width: 20%;
+    float: left;
+    margin: 0 10px 10px 0;
+    max-width: 128px;
+    @include border-radius(128px);
+  }
+}
+
+
+// Latest articles & calendar // latest calendar specific items below
+
+// both articles and calendar share this, and relationship lists as well
+.latest-articles-list, .latest-calendar-list, .relation-list {
+  margin-bottom: 0;
+  li {
+    .list-thumb {
+      width: 21%;
+      @include inlinemiddle;
+      margin-right: 3%;
+      img {
+        width: 85%;
+        @include border-radius(50%);
+      }
+    }
+    .list-meta {
+      width: 59%;
+      @include inlinemiddle;
+      line-height: 1.25em;
+      @include blacktomediumgraylink;
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+      }
+      span {
+        font-size: .95em;
+        @include lightgraytomediumgraylink;
+        display: block;
+        padding-top: .2em;
+      }
+      span.small-date {
+        font-size: .9em;
+        padding: .2em 0;
+        color: $medium-gray;
+      }
+      span.large-date {
+        display: block;
+        border: 1px solid $bordercolor;
+        padding: .5em;
+        margin: .75em 0 .5em 0;
+        background-color: $lightestgray;
+      }
+    }
+  }
+  li {
+    // include style for category link
+    @include categorylink;
+  }
+}
+
+// latest article and latest calendar specific
+
+.latest-articles-list, .latest-calendar-list {
+  li a.list-thumb {
+    background-size: 100%;
+    @include border-radius(50%);
+    img {
+      width: 100% !important;
+    }
+  }
+}
+
+// latest articles specific
+.latest-articles-list {
+  li {
+    counter-increment: step-counter;
+    &:before {
+      content: counter(step-counter);
+      font-size: 3em;
+      font-weight: 700;
+      padding: 0;
+      float: left;
+      @include inlinemiddle;
+      width: 13%;
+    }
+  }
+  a.list-thumb {
+    background-color: rgba(0,0,0,0.25);
+  }
+}
+
+// latest calendar specific
+.latest-calendar-list {
+  li a.list-thumb {
+    background-size: 100%;
+    @include border-radius(50%);
+    img {
+      width: 100% !important;
+    }
+  }
+  .list-meta {
+    width: 76%;
+    padding-left: 2%;
+    .category-link {
+      a {
+        border: 1px solid $bordercolor;
+      }
+    }
+  }
+}
+
+// latest calendar list specific to the SIDEBAR and not HOME (removing rounded edges)
+.sidebar {
+  .latest-calendar-list {
+    li.list-group-item:first-child, li.list-group-item:last-child {
+      @include border-radius(0);
+    }
+    li.list-group-item {
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+}
+
+// Latest Events sidebar - showing latest DAMN mini events on singular event page
+
+.sidebar, .bottom-widgets {
+  .events-events, .calendar-events {
+    .calendar-box {
+      margin: 0;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      display: table;
+      z-index: 100;
+      .calendar-box-wrapper {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+      span {
+        padding: 0;
+      }
+      span.day {
+        font-size: 1.5em;
+        line-height: .95em;
+        padding: 0;
+      }
+    }
+    img {
+      background-color: $black;
+      @include opacity(0.5);
+    }
+    .latest-calendar-list, .latest-articles-list {
+      li {
+        .list-meta {
+          width: 74% !important;
+        }
+      }
+    }
+  }
+  .events-events {
+    .latest-articles-list {
+      li {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+// BACK ISSUES on Magazine taxonomy view
+
+.sidebar {
+  ul.older-issues-list {
+    border-bottom: 1px solid $bordercolor;
+    li {
+      border: none !important;
+      padding: 1.5em;
+      word-wrap: break-word;
+      background-color: $white;;
+      div.mag-image {
+        float: left;
+        margin-right: 1em;
+        background-color: $black;
+        line-height: 1px;
+        width: 30%;
+      }
+      @include blacktowhitelink;
+      h2 {
+        font-weight: 700;
+        font-size: 1.5em;
+      }
+      span {
+        display: block;
+        font-size: .9em;
+        p {
+          margin-bottom: .25em;
+        }
+      }
+      span:first-child {
+        border-top: 1px solid $black;
+      }
+    }
+  }
+}
+
+// Productivity page - sidebar
+.product-info {
+  border: 1px solid $bordercolor;
+  padding: 1.5em 1.5em 2em 1.5em;
+  background-color: $lightestgray;
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    border-left: 0;
+    border-right: 0;
+    padding: 1em;
+  }
+  .company-logo {
+    padding-bottom: 1em;
+  }
+  .product-creators {
+    padding: 0 0 1.3em 0;
+    margin-bottom: 1.3em;
+    border-bottom: 1px solid $bordercolor;
+  }
+  .product-links{
+    span {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-top: 4px;
+    }
+  }
+  .product-buy-link {
+    border-top: 1px solid $bordercolor;
+    padding-top: 1.3em;
+    margin-top: 1.3em;
+  }
+}
+
+.sidebar {
+  .product-info {
+    border: 0;
+    border-top: 1px solid $bordercolor;
+    border-bottom: 1px solid $bordercolor;
+  }
+}
+
+// Calendar Archive (only for sidebar search widget)
+.sidebar {
+  .searchandfilter {
+    ul li li {
+      border: 0 !important;
+    }
+    .datepicker {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 10px;
+      font-size: 1.25em;
+    }
+  }
+}
+
+

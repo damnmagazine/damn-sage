@@ -1,0 +1,88 @@
+{{> partials/header-single}}
+
+<article class="long-read-left">
+	
+	<div class="row post-header">
+			
+		<div class="col-lg-12">
+			
+			<div class="center">
+			
+				<h1>{{{post.post_title}}}</h1>
+				<h2>{{#get_field}}sub-title{{/get_field}}</h2>
+			
+				<p class="excerpt">
+				{{{post.post_excerpt}}}
+				</p>
+			
+				<date>{{date}}</date>
+				
+			</div>					
+		</div>
+	</div>	
+	
+	<div class="row post-content">
+		
+		<div class="col-md-8 damn-plus-info">
+	
+			<div class="col-md-offset-1 col-lg-offset-0 col-md-10 col-lg-4">
+				
+				<a href="/join-damn-plus" title="Join DAMN +">
+					<img src="{{theme_path}}/dist/images/damn-join-box-wide.png" alt="Join DAMN +" class="placeholder" />
+				</a>
+				
+			</div>
+			<div class="col-md-12 col-lg-8">
+			
+				<h2>Dear DAM<sub>N°</sub> reader, This is a <strong>DAM<sub>N°</sub>+</strong> article.</small></h2>
+				
+				With a subscription, you get unlimited access to:
+			
+				<ul>
+					<li>All articles of the current, and previous DAM<sub>N°</sub> issues</li>
+					<li>Premium articles and content, hidden to regular users</li>
+					<li>The entire DAM<sub>N°</sub> archive</li>
+					<li>Much more to come!</li>
+				</ul>
+			
+				<h3><strong>Subscribe for just € 5 / month</strong>, and get two months on the house.</h3>
+			
+				<a href="/join-damn-plus" class="btn btn-default btn-lg issue-color" role="button" title="Join DAMN +">JOIN DAM<sub>N°</sub>+</a>
+				
+				<hr>
+				
+				<h2>Subscribe to our print magazine</h2>
+				
+				<div class="row">
+					<div class="col-md-6 col-lg-4">
+						
+						<a href="{{issue.link}}" title='DAMN°{{issue.number}}'>
+							<img src="{{issue.thumbnail}}" alt="DAMN°{{issue.number}}" class="placeholder" />
+						</a>
+						<h3>DAM<sub>N°</sub>{{issue.number}}</h3>
+					
+					</div>
+					<div class="col-md-6 col-lg-8">
+						
+						<p>Don’t miss a single copy of DAM<sub>N°</sub> Magazine! Build your own library and feel DAM<sub>N°</sub> by taking a yearly subscription today.</p>
+						<h3>6 issues for €70 (Europe)</h3>
+						<h3>$172 (rest of the world)</h3>
+					
+					</div>
+				</div>
+				
+				<a class="btn btn-lg btn-default text-uppercase issue-color" href="https://www.bruil.info/damn" target="_blank" title="Subscribe Now">SUBSCRIBE</a>
+				&nbsp; or &nbsp;
+				<a class="btn btn-lg btn-default text-uppercase issue-color" href="http://www.bruil.info/magazine-damn/back-issues" target="_blank" title="Order Back Issue">ORDER BACK ISSUE</a>
+
+			</div>
+		</div>
+		
+		<div class="col-md-4 paragraph">
+			{{> partials/ad-single}}
+		</div>
+	</div>
+
+</article>
+
+<hr>

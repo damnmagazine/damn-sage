@@ -1,0 +1,1689 @@
+// REUSED ITEMS
+
+/**
+ *	Does calendar need a separate file?
+ */
+.single-calendar {
+	
+	date { 
+		font-style: italic; 
+		font-size: 1.25em; 
+	}
+	
+	hr.primary { border-top: 4px solid black; }
+}
+
+
+.bordered-image {
+  margin-bottom: 1.75em;
+  @media screen and (max-width: 767px) {
+    margin-bottom: .5em;
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    margin-bottom: 2em;
+  }
+  img, .featured-video {
+    padding: 1em;
+    border: 1px solid $bordercolor;
+    width: 100%;
+  }
+}
+
+.header-circle	{
+	width:100%;
+	background: no-repeat center;
+	background-size: cover;
+	
+
+	&:after {
+		content: "";
+		display: block;
+		width: 100%;
+		height:0;
+		padding-bottom: 100%;
+		background: rgba(0,0,0, .2) no-repeat center;
+	}
+	
+	&:hover {
+		&:after { background-color: rgba(0,0,0,.75); }
+	}
+		
+	div {
+		float:left;
+		width:95%;
+		padding-top:35%;
+		line-height:1em;
+		text-align:center;
+		color:white;
+		
+		span	{
+			display: block;
+			text-align: center;
+			font-size: 2em;
+			line-height: 1em;
+			font-weight: 800;
+			
+			&.month {
+				text-transform: uppercase;
+				font-weight: 100;
+			}
+			
+			&.running {
+				font-size: 2.5em;
+				line-height: 1.5em;
+			}
+		}
+		
+		@media screen and (max-width: 1023px) {
+			span.running { font-size: 14px !important; }
+		}
+	}
+}
+
+.positioned-border {
+  border: 1px solid $bordercolor;
+  @include position(absolute, $top: 1.25em, $left: 1.25em, $right: 1.25em, $bottom: 1.25em);
+  z-index: 10;
+  @include opacity(0.75); // until you hover over .news-item
+  @media screen and (min-width: 1200px) {
+    @include position(absolute, $top: 2em, $left: 2em, $right: 2em, $bottom: 2em);
+  }
+}
+
+// ARCHIVE & SINGLE
+
+.post-image {
+  position: relative;
+}
+
+
+
+.news-item {
+  margin-bottom: 2em;
+  overflow: hidden;
+  .post-image {
+    clear: both;
+    img {
+      width: 100%;
+	  height: auto;
+    }
+  }
+  &:hover {
+    .post-image {
+      @include opacity(0.3);
+      @include transition200ms;
+    }
+  }
+}
+
+.news-item {
+  &:hover {
+    header {
+      background: linear-gradient( to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) );
+      @include transitions;
+    }
+  }
+}
+
+// all types of news items here. below are individual news items custom styling
+// (.news-items for feeds, .single-news-item for single page, .single-video-item for video post format single page)
+.news-item, .single-news-item, .single-video-item, .single-gallery-item, .single-event-item {
+  position: relative;
+  background-color: $black;
+  .post-image {
+    position: relative;
+    @include backgroundcovertopcenter;
+    img.placeholder {
+      width: 100%;
+    }
+  }
+  header {
+    width: 100%;
+    @include categorylink;
+    h1, h2, h3 {
+      margin-bottom: 0;
+      clear: both;
+      font-weight: 700;
+    }
+    /* subtitle for main feeds - see below for subtitle for single page headers */
+    .subtitle {
+      @include subtitletext;
+      p {
+        margin: 0;
+        font-size: 1em;
+        line-height: 1.4em;
+        a {
+          display: none;
+        }
+      }
+    }
+    h2 {
+      @media screen and (max-width: 767px) {
+        font-size: 1.55em;
+      }
+    }
+    h4.calendar-date {
+      margin: .75em 0 0 0;
+      color: $bordercolor;
+      border-top: 1px solid $bordercolor;
+      padding-top: .7em;
+      font-size: .9em;
+      span {
+        display: block;
+        padding-top: .1em;
+      }
+    }
+    h2, h4 {
+      i.fa-calendar {
+        font-size: .8em;
+      }
+    }
+  }
+  .relative-header {
+    background-color: $white;
+    padding: 1.2em;
+    border-bottom: 1px solid $bordercolor;
+    @media screen and (min-width: 1200px) {
+      padding: 2em;
+    }
+  }
+}
+
+.news-item, .single-news-item {
+  header {
+    .category-link {
+      a {
+        border: 1px solid $white;
+        color: $white;
+      }
+    }
+    .has-format-video {
+      a {
+        display: none;
+      }
+      a.damn-plus {
+        display: block;
+      }
+    }
+    h1, h2, h3 {
+      color: $white;
+      text-shadow: 2px 2px 7px rgba(0,0,0,.4);
+      @include whitetowhitelink;
+    }
+    .subtitle {
+      color: $white;
+    }
+  }
+}
+
+.news-item {
+  header {
+    padding: 1.2em;
+    background: linear-gradient( to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) );
+    @include posabsolutebottomleft;
+    position: absolute !important;
+    @media screen and (min-width: 1200px) {
+      padding: 2em;
+    }
+  }
+}
+
+.single-news-item {
+  header {
+    padding: 0 0 3.5em 0;
+    width: 100%;
+    background: none;
+    @media screen and (max-width: 767px) {
+      padding: 0 0 2.25em 0;
+      h1 {
+        text-shadow: none;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      @include posabsolutebottomleft;
+      position: absolute !important;
+    }
+  }
+  .post-image {
+    max-height: 500px;
+    overflow: hidden;
+    .container {
+      max-height: 500px;
+      .header-wrapper {
+        max-height: 500px;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.single-video-item, .single-gallery-item, .single-event-item {
+  header {
+    .category-link {
+      a {
+        border: 1px solid $black;
+        color: $black;
+      }
+    }
+  }
+}
+
+.single-gallery-item, .single-event-item {
+  background: $white;
+  padding: 2em 0 0.25em 0;
+  border-bottom: 1px solid $bordercolor;
+  // also used below in advertorials single
+  @include metasharing;
+  .meta-sharing {
+    margin: 1.25em 0 1.75em 0;
+    border: 0;
+    border-top: 1px solid $bordercolor;
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      h1.entry-title {
+        font-size: 2em !important;
+      }
+      .pull-left {
+        float: left !important;
+      }
+      .pull-right {
+        float: right !important;
+      }
+    }
+  }
+  .bordered-image {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 1.75em;
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      img {
+        padding: .5em;
+      }
+    }
+  }
+}
+
+// specific to single event
+.single-event-item {
+  padding: 0;
+  @include backgroundcovertopcenter;
+  .fade-wrapper {
+    padding: 2em 0;
+    background-color: rgba(255,255,255,0.9);
+  }
+  header {
+    h3.subtitle {
+      font-size: 1.8em;
+      margin: 0.25em 0;
+    }
+    h4.calendar-date {
+      color: $black;
+      font-size: 1.5em;
+    }
+  }
+}
+
+// quote formats
+.item,
+.news-item {
+  header.quote-format {
+    @include position(absolute, $top: 0, $left: 0, $bottom: 0, $right: 0);
+    position: absolute !important;
+    background: none !important;
+    padding: 0 !important;
+    .quote-wrapper-outer {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: table;
+      .quote-wrapper-inner {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 2em;
+        blockquote {
+          margin: 0 !important;
+          padding: 0 !important;
+          quotes: "\201C""\201D""\2018""\2019";
+          border: 0 !important;
+          font-size: inherit;
+        }
+        blockquote:before {
+          color: $white;
+          content: open-quote;
+          font-size: 4em;
+          line-height: 0.1em;
+          margin-right: 0.15em;
+          vertical-align: -0.4em;
+        }
+        p {
+          margin: 0;
+          color: $white;
+          font-size: 1.7em;
+          display: inline;
+          @media screen and (max-width: 767px) {
+            font-size: 1.5em;
+          }
+          @media screen and (min-width: 992px) and (max-width: 1100px) {
+            font-size: 1.35em;
+          }
+        }
+        blockquote:after {
+          color: $white;
+          content: close-quote;
+          font-size: 4em;
+          line-height: 0.1em;
+          margin-left: 0.15em;
+          vertical-align: -0.4em;
+        }
+        a,a:visited {
+          color: $white !important;
+          &:hover {
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// quote format for smaller feeds
+.home-category-feeds, .related-posts {
+  .news-item {
+    header.quote-format {
+      .quote-wrapper-outer {
+        .quote-wrapper-inner {
+          padding: 1.5em;
+          blockquote:before {
+            color: $white;
+            content: open-quote;
+            font-size: 3em;
+            line-height: 0.1em;
+            margin-right: 0.15em;
+            vertical-align: -0.4em;
+          }
+          p {
+            font-size: 1.3em;
+            @media screen and (min-width: 992px) and (max-width: 1100px) {
+              font-size: 1.1em;
+            }
+          }
+          blockquote:after {
+            font-size: 3em;
+            line-height: 0.1em;
+            margin-left: 0.15em;
+            vertical-align: -0.4em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// single page quotes
+
+.entry-content {
+  header.quote-single {
+    margin-bottom: 2.5em;
+    blockquote {
+      margin: 0 !important;
+      padding: 0 !important;
+      quotes: "\201C""\201D""\2018""\2019";
+      border: 0 !important;
+      font-size: inherit;
+      p {
+        margin: 0;
+        font-size: 2.2em !important;
+        display: inline;
+        @media screen and (max-width: 767px) {
+          font-size: 1.6em;
+        }
+        @media screen and (min-width: 992px) and (max-width: 1100px) {
+          font-size: 1.4em;
+        }
+      }
+    }
+    blockquote:before {
+      color: $black;
+      content: open-quote;
+      font-size: 6em;
+      line-height: 0.1em;
+      margin-right: 0.15em;
+      vertical-align: -0.4em;
+    }
+    blockquote:after {
+      color: $black;
+      content: close-quote;
+      font-size: 6em;
+      line-height: 0.1em;
+      margin-left: 0.15em;
+      vertical-align: -0.4em;
+    }
+  }
+}
+
+// Productivity alternate .news-item //
+
+body.post-type-archive-product, body.home .product-feed-home {
+  .news-item, .single-news-item {
+    .post-image {
+      border: 10px solid $black;
+      border-bottom: 0;
+    }
+    header {
+      position: relative !important;
+      color: $white;
+      h2 {
+        margin: 0;
+        font-weight: 400;
+      }
+      p {
+        margin: .8em 0 0 0;
+        a {
+          display: none;
+        }
+      }
+      p.product-creators {
+        text-align: center;
+        margin-top: 1.5em;
+        span {
+          display: inline-block;
+          margin: 0 auto;
+          padding-top: 10px;
+          border-top: 1px solid $gray;
+          text-transform: uppercase;
+          font-size: .9em;
+        }
+      }
+      .subtitle {
+        font-size: (26 / 16) * 1em;
+      }
+    }
+  }
+}
+
+// PRODUCTIVITY ARCHIVE //
+
+@media screen and (min-width: 1px) and (max-width: 480px){
+  #columns[data-columns]::before {
+    content: '1 .col-xs-12';
+    color: #fff !important;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 767px){
+  #columns[data-columns]::before {
+    content: '2 .col-xs-6';
+    color: #fff !important;
+  }
+}
+@media screen and (min-width:768px) and (max-width: 991px){
+  #columns[data-columns]::before {
+    content: '2 .col-sm-6';
+    color: #fff !important;
+  }
+}
+@media screen and (min-width:992px) and (max-width: 9999px){
+  #columns[data-columns]::before {
+    content: '3 .col-md-4';
+    color: #fff !important;
+  }
+}
+
+
+// CALENDAR ARCHIVE
+
+body.post-type-archive-calendar, body[class^="calendar-"], body[class*=" calendar-"], body.post-type-archive-product {
+  .news-item, .single-news-item {
+    header {
+      position: relative !important;
+      z-index: 100;
+    }
+  }
+  .ui-datepicker {
+    width: 250px;
+  }
+}
+
+body.single-calendar, body.tax-magazine {
+  .news-item, .single-news-item {
+    header {
+      position: absolute !important;
+    }
+  }
+}
+
+body.post-type-archive-calendar {
+  .back-to-calendar {
+    display: none !important;
+  }
+  .news-item, .single-news-item {
+    header {
+      h2, h4 {
+        i.fa-calendar {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1px) and (max-width: 480px){
+  #columns-calendar[data-columns]::before {
+    content: '1 .col-xs-12';
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 767px){
+  #columns-calendar[data-columns]::before {
+    content: '2 .col-xs-6';
+  }
+}
+@media screen and (min-width:768px) and (max-width: 1539px){
+  #columns-calendar[data-columns]::before {
+    content: '3 .col-sm-4';
+  }
+}
+
+@media screen and (min-width:1540px) and (max-width: 9999px){
+  #columns-calendar[data-columns]::before {
+    content: '4 .col-sm-3';
+  }
+}
+
+#columns-calendar {
+  color: $white;
+}
+
+// search widget on calendar list and results page
+
+.main {
+  .widget_search_filter_register_widget {
+    padding: 1em;
+    margin-bottom: 1.75em;
+    border: 1px solid $bordercolor;
+    h3.widget-title, .searchandfilter, h4, ul, li, ul.sf_date_field li {
+      display: inline-block !important;
+    }
+    h3.widget-title {
+      padding: 0 !important;
+      font-size: 1.4em;
+    }
+    ul {
+      li {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 0 !important;
+        &:hover {
+          background: none !important;
+        }
+      }
+      li.sf-field-post-meta-start_date {
+        padding-right: 0;
+      }
+    }
+    h4 {
+      margin: 0 1em 0 .25em;
+      padding: 0 0 0 1em !important;
+      font-weight: 700;
+      border-left: 1px solid $bordercolor;
+    }
+    ul.sf_date_field {
+      input {
+        margin-left: 10px;
+        padding: 5px 10px;
+      }
+    }
+    .back-to-calendar {
+      // see above, this button is hidded on body.post-type-archive-calendar
+      @media screen and (min-width: 651px) and (max-width: 991px) {
+        float: none !important;
+        display: block;
+        text-align: center;
+      }
+      a {
+        font-size: 1.2em;
+        @media screen and (min-width: 651px) and (max-width: 991px) {
+          margin-top: 1em;
+        }
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      h3 {
+        font-size: 1.5em;
+      }
+      h4 {
+        font-size: 1em;
+      }
+      ul.sf_date_field {
+        input {
+          margin-left: 7px;
+          padding: 5px 5px;
+        }
+      }
+    }
+    @media screen and (max-width: 650px) {
+      .searchandfilter {
+        width: 100% !important;
+      }
+      ul {
+        li {
+          padding-left: 0 !important;
+        }
+      }
+      h3.widget-title {
+        padding-bottom: .75em !important;
+      }
+      h4 {
+        margin: 0 !important;
+        padding: .75em 0 .75em 0 !important;
+        border-top: 1px solid $bordercolor;
+        border-left: 0 !important;
+        width: 100% !important;
+      }
+      ul.sf_date_field {
+        padding-bottom: .75em !important;
+        width: 100% !important;
+        li {
+          width: 100% !important;
+        }
+        input {
+          margin: 0 0 .5em 0 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          font-size: 1.3em;
+        }
+      }
+    }
+    @media screen and (min-width: 651px) and (max-width: 767px) {
+      h3 {
+        font-size: 1.1em !important;
+      }
+      h4 {
+        font-size: 1em !important;
+        margin-left: 0 !important;
+      }
+    }
+    @media screen and (min-width: 992px) {
+      h3.widget-title, .searchandfilter {
+        float: left !important;
+      }
+      h3.widget-title {
+        margin-top: .3em !important;
+      }
+      ul.sf_date_field input {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+.calendar-results {
+  .alert-warning {
+    font-size: 1.45em;
+  }
+}
+
+
+// date picker in calendar widget, styled nicer than default
+
+#ui-datepicker-div {
+  width: 260px !important;
+  padding: 10px !important;
+  z-index: 100 !important;
+  table.ui-datepicker-calendar {
+    thead {
+      th {
+        color: $white !important;
+        border-top: 1px solid $white !important;
+      }
+    }
+  }
+  .ui-datepicker-title {
+    color: $white !important;
+  }
+}
+
+.event-date {
+  margin: 0;
+  float: left;
+  width: 100%;
+  .start-date, .end-date {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.event-date.border-bottom-white {
+  border-bottom: 1px solid $bordercolor !important;
+}
+
+// Calendar archive event date
+body.post-type-archive-calendar, body[class^="calendar-"], body[class*=" calendar-"] {
+  .damn-plus-badge {
+    right: 0 !important;
+    left: inherit;
+    width: 75px;
+  }
+  .event-date {
+    padding: 0;
+    border-top: 1px solid $bordercolor;
+    color: $white; // see below for black color for single pages
+  }
+}
+
+// Calendar single
+
+body.single-calendar {
+  .event-date {
+    color: $black;
+    border: 0;
+    margin: .5em 0 .25em 0;
+    .end-date {
+      border-left: 1px solid $bordercolor;
+    }
+  }
+  .event-date.bordered-gray {
+    border: 1px solid $bordercolor;
+  }
+  .hentry {
+    .entry-content {
+      .title-header {
+        border: 0 !important;
+        margin-bottom: 0 !important;
+        .calendar-share {
+          padding-top: 1.4em;
+          @media screen and (max-width: 1539px) {
+            float: none !important;
+            clear: both !important;
+          }
+          @media screen and (min-width: 1540px) {
+            padding-top: 1em;
+          }
+        }
+      }
+    }
+  }
+  .bordered-image {
+    margin-bottom: -1px;
+  }
+}
+
+// MAGAZINE TAXONOMY ARCHIVE
+body.back-issues {
+  .news-item {
+    background: none;
+    .post-image {
+      background-color: $black;
+      line-height: 1px;
+    }
+    .color-1 {
+      border: 1px solid $bordercolor;
+    }
+    h2 {
+      font-size: 1.6em;
+      margin-top: .6em;
+      a, a:visited {
+        color: $black;
+      }
+    }
+  }
+}
+
+h3.all-articles {
+  margin: 0 0 1em 0;
+  padding: 1em 0 0 0;
+  border-top: 1px solid $bordercolor;
+}
+
+body.single, body.tax-magazine {
+  .single-news-item {
+    margin: 0;
+  }
+}
+
+
+// SINGLE (up top) //
+
+body.single {
+  .navbar {
+    margin-bottom: 0;
+  }
+  h1 {
+    font-weight: 400;
+    font-size: (48 / 16) * 1em;
+    @media screen and (max-width: 767px) {
+      font-size: (37 / 16) * 1em;
+    }
+    .play-video-icon {
+      font-size: .9em;
+    }
+  }
+}
+
+
+/*********** SINGLE PAGES ***********/
+
+// SINGLE (the rest) //
+
+body.single, body.page {
+  .hentry {
+    margin-bottom: 2em;
+    @include floatleft100;
+
+    /* entry */
+    .entry-content {
+      @include floatleft100;
+      padding-bottom: 1.25em;
+      h1.entry-title {
+        margin: 0 0 .4em 0;
+      }
+      p {
+        font-size: 1.25em;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0 0 (16 / 24) * 1em 0;
+      }
+      .title-header {
+        border-bottom: 1px solid $bordercolor;
+        margin-bottom: 1.5em;
+        padding-bottom: 1.5em;
+        h1 {
+          margin-bottom: 0;
+          clear: both;
+        }
+        h2 {
+          margin: .5em 0 0 0;
+          clear: both;
+        }
+      }
+    }
+    // relationship post items
+    .relation-list {
+      margin-bottom: 1.5em;
+      li {
+        border-left: 1px solid $light-gray;
+        border-right: 1px solid $light-gray;
+        border-color: $light-gray;
+        padding: 1.5em;
+        .list-thumb {
+          max-width: 120px;
+        }
+        .list-meta {
+          @media screen and (min-width: 768px) {
+            font-size: 1.3em;
+          }
+          @media screen and (min-width: 992px) {
+            font-size: 1.4em;
+          }
+          @media screen and (min-width: 1200px) {
+            font-size: 1.6em;
+          }
+          width: 77%;
+        }
+      }
+    }
+  }
+}
+
+// SINGLE (the rest - footer)
+body.single, body.page {
+  .hentry {
+    // see below for individual items
+  }
+}
+
+/* entry meta + social sharing */
+.meta-sharing {
+  margin: 0 0 1.6em 0;
+  border: 1px solid $bordercolor;
+  float: left;
+  width: 100%;
+  .pull-left, .pull-right {
+    padding: 1.25em;
+    font-size: .95em;
+  }
+  .pull-left {
+    p {
+      line-height: 18px;
+    }
+    &:nth-child(1) {
+      border-right: 1px solid $bordercolor;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .pull-right {
+      float: left !important;
+      margin-top: 3em;
+      width: 100% !important;
+      .at-svc-facebook {
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
+.addthis_responsive_sharing {
+  @include floatleft100;
+}
+.at-resp-share-element a {
+  padding-bottom: 0 !important;
+  margin: 0 0 0 5px !important;
+}
+
+body.single-calendar {
+  .calendar-share {
+    margin-top: .5em;
+  }
+}
+
+// top social sharing and author/date info, only to show on single pages at 768 - 992 (hidden with bootstrap visible-sm-block class on template)
+.ipad-sized-meta {
+  border-bottom: 1px solid $bordercolor;
+  margin: 0;
+  .meta-sharing {
+    margin: 3em 0;
+    border: 0;
+    .pull-left, .pull-right {
+      border: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+footer.post-footer, footer.contributors-list, .author-page-info {
+  @include floatleft100;
+  padding: 1.5em;
+  border: 1px solid $bordercolor;
+  @include border-radius(2px);
+  // background-color: $lightestgray;
+  .author-wrapper, .tags-wrapper, .story-navigation {
+    @include floatleft100;
+  }
+  .author-wrapper {
+    border-bottom: 1px solid $bordercolor;
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    .author-info {
+      @include floatleft100;
+      .pull-left {
+        margin: 0 1.5em 0 0;
+        width: 85px;
+        h3 {
+          a {
+            color: $black !important;
+          }
+        }
+        @media screen and (min-width: 992px) {
+          width: 128px;
+        }
+        img {
+          @include border-radius(150px);
+        }
+      }
+      .author-meta {
+        margin-left: 109px;
+        @media screen and (min-width: 992px) {
+          margin-left: 152px;
+        }
+      }
+      h3 {
+        margin: 0;
+      }
+      p {
+        margin: .5em 0 .5em 0;
+      }
+      .social-profiles {
+        margin: 0;
+        li {
+          padding: 0 10px 0 0;
+        }
+        li:last-child {
+          padding-right: 0;
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .tags-wrapper {
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid $bordercolor;
+  }
+  .story-navigation {
+    img {
+      width: 50px;
+      height: 50px;
+      @include border-radius(50px);
+    }
+    .nav-previous, .nav-next {
+      @include text-truncate;
+      line-height: 50px;
+      @include blacktomediumgraylink;
+    }
+    .nav-previous {
+      padding-right: 0;
+      @media (max-width: $screen-xs-max) {
+        float: none;
+      }
+      img {
+        float: right;
+        margin-left: 1em;
+      }
+    }
+    .nav-next {
+      padding-left: 0;
+      img {
+        float: left;
+        margin-right: 1em;
+      }
+    }
+    .nav-next, .nav-previous {
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        padding: 0.5em 0;
+        float: none !important;
+        clear: both !important;
+      }
+    }
+  }
+}
+
+// Contributors list
+footer.contributors-list {
+  .author-wrapper {
+    .author-info {
+      p {
+        margin-bottom: 1em;
+      }
+    }
+  }
+  .author-wrapper:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+// Author wrapper on Author page
+body.author {
+  .author-wrapper {
+    @include zeroed;
+    h3 {
+      font-size: 2em;
+      @include blacktoblacklink;
+    }
+    ul.social-profiles {
+      float: left;
+      width: 100%;
+      border-top: 1px solid $bordercolor;
+      padding-top: 1em;
+      margin-top: 1.5em !important;
+    }
+  }
+}
+
+// Single Productivity
+body.single-product {
+  .entry-content {
+    .product-info {
+      border: 1px solid $bordercolor;
+      margin-bottom: 2em;
+    }
+  }
+  .meta-sharing {
+    border: 0;
+  }
+}
+
+// MISC SINGLE - related products, facebook comments, all articles for magazines
+
+// Damn Plus specific
+
+.damn-plus-badge {
+  @include position(absolute, $top: 0, $left: 0);
+  width: 90px;
+  padding: .25em;
+  z-index: 150;
+  // @include box-shadow(1px 1px 2px rgba(0,0,0,.3));
+  img {
+    border: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.category-link {
+  .damn-plus {
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+.damn-plus-cta {
+  @media screen and (min-width: 1200px) {
+    display: table;
+  }
+  padding: 1em;
+  height: 100%;
+  margin: 1em 0 2em 0;
+  @include floatleft100;
+  @media screen and (min-width: 768px) {
+    padding: 1.5em;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 1.8em;
+  }
+  div.damn-plus-image-cta, div.damn-plus-cta-copy {
+    @media screen and (min-width: 1200px) {
+      display: table-cell;
+    }
+    height: 100%;
+  }
+  .damn-plus-image-cta {
+    .post-image {
+      max-width: 95%;
+      margin-bottom: 1em;
+      color: $white;
+    }
+    a, a:visited {
+      color: $white !important;
+    }
+    .mobile-image {
+      border-bottom: 1px solid $white;
+      padding-bottom: .75em;
+      margin-bottom: 1em;
+    }
+  }
+  .damn-plus-cta-copy {
+    color: $white;
+    @media screen and (min-width: 1200px) {
+      padding-left: 25px !important;
+      border-left: 1px solid $white;
+    }
+    h2 {
+      border-bottom: 1px solid $white;
+      padding-bottom: .5em;
+      font-weight: 700;
+      font-size: 2.25em;
+    }
+    ul {
+      li {
+        border-color: $white;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        padding-bottom: .5em;
+        margin-bottom: .5em;
+        font-size: 1.2em;
+      }
+    }
+    .btn {
+      margin-bottom: 1em;
+      margin-top: .25em;
+      background-color: $white !important;
+      color: $black !important;
+    }
+    .join-btn {
+      font-size: 1.75em;
+    }
+    .latest-cover {
+      @include blacktowhitelink ;
+    }
+  }
+}
+
+// Video Format
+
+/*body.single-post, body.single-advertorial {
+  .featured-video-plus {
+    @include position(absolute, $top: 0, $left: 0%);
+    width: 100%;
+    height: 100%;
+    iframe, object, embed {
+      width: 100%;
+      height: 100%;
+      max-height: 500px;
+    }
+  }
+}*/
+
+// (Photo) Gallery Format
+
+.gallery-wrapper {
+  .image-thumb {
+    padding-bottom: 30px;
+    .image-thumb-img {
+      position: relative;
+      img {
+        padding: 0.5em;
+        border: 1px solid $bordercolor;
+      }
+      .gallery-caption {
+        @include posabsolutebottomleft;
+        padding: .5em 1em 1em 1em;
+        background: $black;
+        background: rgba(255,255,255,0.9);
+        border: 1px solid $bordercolor;
+        color: $black;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.sl-overlay {
+  @include opacity(0.9);
+  z-index: 999999;
+}
+.sl-wrapper {
+  font-size: 16px;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+.sl-wrapper .sl-image, .sl-wrapper .sl-navigation button.sl-prev, .sl-wrapper .sl-navigation button.sl-next, .sl-spinner {
+  z-index: 10000000;
+}
+.sl-wrapper .sl-close {
+  top: 4%;
+  right: 3%;
+  z-index: 10000000;
+}
+.sl-wrapper .sl-counter {
+  top: 4%;
+  left: 3%;
+  z-index: 10000000;
+}
+.sl-wrapper .sl-image .sl-caption {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+// MEDIA LIST
+
+body.page-media-list {
+  .wrap {
+    padding-top: 2em;
+    background-color: $gray;
+  }
+  .news-item {
+    background-color: $white;
+    padding: 10px;
+    border: 1px solid $bordercolor;
+    header {
+      padding: 2em;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      width: auto;
+    }
+  }
+  // no border on damn plus items
+  .item.damn-plus {
+    .news-item {
+      border: 0;
+    }
+  }
+  .pagination>li>a, .pagination>li>span {
+    border-color: $gray;
+  }
+}
+
+// ADVERTORIALS
+body.single-advertorial {
+  .hentry {
+    border: 10px solid $black;
+    padding: 2em;
+  }
+}
+
+.advertorial-color {
+  background-color: $black;
+  .advertorial-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $black;
+    background: rgba(0,0,0,0.75);
+    height: 100%;
+  }
+  header {
+    padding: 1.5em 1em;
+    color: $white;
+    @include categorylink;
+    @media screen and (min-width: 630px) {
+      padding: 2em;
+    }
+    .category-link a {
+      border: 1px solid $white;
+      color: $white;
+      &:hover {
+        color: $medium-gray;
+      }
+    }
+    .entry-meta {
+      clear: both;
+    }
+    @include metasharing;
+  }
+  .single-news-item {
+    .post-image {
+      @media screen and (max-width: 480px) {
+        max-height: 320px;
+      }
+      @media screen and (min-width: 481px) and (max-width: 767px) {
+        max-height: 400px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+        max-height: 450px;
+      }
+      @media screen and (min-width: 992px) {
+        max-height: 600px;
+      }
+    }
+  }
+}
+
+// EVENTS ARCHIVE
+
+body.post-type-archive-events {
+  .calendar-box {
+    position: absolute;
+    bottom: 2.5em;
+    left: 3em;
+    z-index: 100;
+    border-color: $white;
+  }
+
+  .border-wrapper {
+    @media screen and (min-width: 1200px) {
+      padding: 2em;
+    }
+    padding-bottom: 0 !important;
+  }
+  .item {
+    .news-item {
+      margin-bottom: 1.25em;
+      @media screen and (min-width: 1200px) {
+        margin-bottom: 2em;
+      }
+      .event-image {
+        .event-button {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          background: none;
+          border: 2px solid $white;
+          font-size: 1.75em;
+          z-index: 10;
+          @include opacity(0); // until you hover over .news-item
+          @include transitions;
+        }
+      }
+      header {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        bottom: inherit;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        font-size: 18px; // vertical rhythym here to make all items in header larger
+        .category-link a {
+          font-size: 16px; // except this says the same size (vertical rhythym)
+        }
+        h2 {
+          @media screen and (min-width: 1540px) {
+            font-size: 2em;
+          }
+        }
+        h4.calendar-date {
+          padding-top: 1em;
+          margin-top: 1.25em;
+          font-size: 1em;
+          border-width: 1px;
+        }
+      }
+      // .news-item hover, keep the button solid white
+      &:hover {
+        .post-image {
+          @include opacity(0.6);
+        }
+      }
+      &:hover { // on .news-item hover, reveal event details button
+        .event-button {
+          background-color: $black;
+          @include opacity(1);
+        }
+        .positioned-border {
+          @include opacity(1);
+        }
+      }
+    }
+  }
+
+  // for every odd item, backgroudn is white, so header has to be style as black text on white, not the usual white text on black
+  .item:nth-child(odd) {
+    .news-item {
+      background-color: $white;
+      .event-image {
+        background-color: $black;
+      }
+      .event-details {
+        border: 1px solid $black;
+        @media screen and (max-width: 767px) {
+          border-top: 0;
+        }
+        @media screen and (min-width: 768px) {
+          border-left: 0;
+          img {
+            margin-bottom: -2px;
+          }
+        }
+      }
+      header {
+        background: none;
+        .category-link a {
+          border: 1px solid $black;
+          color: $black;
+        }
+        h2, h3 {
+          color: $black;
+          text-shadow: none;
+          a, a:visited {
+            color: $black;
+          }
+        }
+        h4.calendar-date {
+          border-color: $black;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+// SINGLE EVENT
+
+body.single-events {
+  .positioned-border {
+    @media screen and (min-width: 1200px) {
+      @include position(absolute, $top: 1.5em, $left: 1.5em, $right: 1.5em, $bottom: 1.5em);
+    }
+  }
+  .calendar-box {
+    position: absolute;
+    bottom: 2.5em;
+    left: 3em;
+    border-color: $white;
+  }
+  .start-end-date {
+    border-top: 1px solid #ddd;
+    padding: 1em 0 0 0;
+    margin-top: 1em;
+    float: left;
+    width: auto;
+    p {
+      font-size: 1.3em;
+      margin-bottom: .25em;
+    }
+  }
+  .event-links {
+    clear: both;
+    padding-bottom: 1em;
+    a.btn-lg {
+      margin-top: .8em !important;
+      // background-color: $black !important;
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+  }
+  .addthis_responsive_sharing {
+    border-bottom: 1px solid $bordercolor;
+    margin-bottom: 1.25em;
+    padding-bottom: 1.5em;
+    float: none;
+    clear: both;
+    .at-resp-share-element {
+      .at-share-btn:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// other misc +  bxslider
+
+.facebook-comments, .related-posts, .back-issues, .all-articles {
+  margin-bottom: 2em;
+  @include floatleft100;
+}
+
+.all-articles {
+  h2 {
+    font-size: (21 / 16) * 1em;
+    line-height: 1.15;
+  }
+}
+
+.related-posts {
+  h2 {
+    font-size: (24 / 16) * 1em;
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .item:nth-child(3) {
+      display: none;
+    }
+  }
+  .damn-plus-badge {
+    width: 75px;
+  }
+  .news-item header {
+    padding: 1.1em;
+  }
+}
+
+body.tax-magazine {
+  .news-item header {
+    padding: 1.1em;
+  }
+}
+
+.fb-comments {
+  width: 100% !important;
+  padding: 0 0 1.5em 0;
+  background-color: $white !important;
+  span {
+    background-color: $white !important;
+    padding: 1em;
+    width: 100% !important;
+    min-height: 210px !important;
+    border: 1px solid $bordercolor;
+    @include border-radius(2px);
+  }
+  iframe {
+    width: 96% !important;
+  }
+}
+
+body.single {
+  .more-link {
+    display: none;
+  }
+}
+
+// damn plus category misc
+body.category-damn-plus .title-wrapper {
+  padding-bottom: 2em;
+  @include blacktowhitelink;
+}
+
+body.category-damn-plus.logged-in {
+  .title-wrapper .taxonomy-description {
+    a {
+      display: none;
+    }
+  }
+}
+
+.bordered-image {
+  .feature-slider {
+    visibility: hidden;
+    img {
+      border: 0;
+    }
+  }
+}
+
+.pre-loader {
+  text-align: center;
+  padding: 50px 0;
+  border: 1px solid $bordercolor;
+  img {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+  }
+}
+
+// bxslider
+.bx-wrapper {
+  box-shadow: none;
+  border: none;
+  margin-bottom: 4em;
+  border: 1px solid $bordercolor;
+  // loading
+  .bx-loading {
+    background-image: url(../images/bx_loader_2x.gif);
+  }
+  // arrows
+  .bx-controls-direction a {
+    width: 40px;
+    height: 40px;
+    background-size: 100% !important;
+    @media screen and (max-width: 767px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  // prev arrow
+  .bx-controls-direction a.bx-prev {
+    background: url(../images/left-arrow.png) no-repeat;
+    left: 20px;
+  }
+  // next arrow
+  .bx-controls-direction a.bx-next {
+    background: url(../images/right-arrow.png) no-repeat;
+    right: 20px;
+  }
+  ul.bxslider, ul.bxslider li {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+

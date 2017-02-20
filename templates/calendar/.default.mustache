@@ -1,0 +1,88 @@
+{{> /partials/header-single}}
+
+<article class="long-read">
+		
+	<div class="container post-content">
+		
+		<div class="row">
+			<div class="col-md-8 col-lg-9">
+				
+				<h1>{{{post.post_title}}}</h1>
+				<h2>{{#get_field}}sub-title{{/get_field}}</h2>
+				
+				<hr class='primary'>
+				
+				{{#has_video}} <br><br>{{{video}}}<br> {{/has_video}}
+				{{^has_video}} {{> /partials/image-captioned}} {{/has_video}}
+				
+				<date>{{date}}</date>
+				<hr>
+			</div>
+			
+			<div class="col-md-4 col-lg-3">
+			
+				{{> /partials/ad-single}}
+			
+			</div>
+		</div>
+		
+		{{#spill}}
+		<div class="row">
+			
+			<div class="col-md-8 col-lg-9 paragraph">
+				{{{paragraphs}}}
+			</div>
+			
+			<div class="col-md-4 col-lg-3">
+				
+				{{> /partials/quote-tweet}}
+
+			</div>
+		</div>
+		{{/spill}}
+				
+		{{#spill}}
+		<div class="row spill-quotes">
+			<div class="col-md-12 col-lg-10 col-lg-offset-1">
+				<div class="quote">
+					
+					{{quotes}}
+					<span class="tweet">
+						<i class='fa fa-twitter'></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		{{/spill}}
+		
+		<div class="row">
+			{{#spill}}
+			
+				<div class="image col-sm-6">
+					<img src="{{images.url}}" title="{{images.post_title}}" />
+					
+					<span class="caption">
+						{{images.post_content}}
+					</span>
+				</div>
+			
+			{{/spill}}
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12 social-row">
+				<div class='social-share'>
+					<i>Share this moment</i>
+					<div class="addthis_custom_sharing"></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</article>
+
+<hr>
+
+{{> /partials/single-more-about}}
+
+<hr>

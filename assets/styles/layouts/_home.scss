@@ -1,0 +1,641 @@
+body.home {
+	
+	header {
+		background-position: center !important;
+		
+		h3.subtitle { color: white; }
+		
+		&.positive-contrast { 
+			background-position: center top !important; 
+			
+			h3.subtitle { color: #242424; }
+		}
+	}
+
+	.logo-container .issue-buttons .fa { color: white; }
+
+	/* Over-writes */
+	@media screen and (max-width: 1023px) {
+		.first-post-advert-wrapper .large-post p {
+			max-height: 80px; overflow: hidden;
+		}
+	}
+}
+
+
+.recent-agenda {
+	margin-top: 10px;
+	
+	article {
+		margin-bottom: 15px;
+		text-align: center;
+		
+		h1 {
+			margin: 14px 0 4px;
+			color: $black;
+			font-size: 1.1em;
+			font-weight: 500;
+			overflow: hidden;
+			@media screen and (min-width: 1280px) { max-height: 66px; }
+		}
+		
+		h3 {
+			color: $black;
+			font-size: .86em;
+			font-weight: 200;
+			line-height: 1.2em;
+			overflow: hidden;
+			@media screen and (min-width: 1280px) { max-height: 80px; }
+		}
+		
+		.agenda-share {
+			i { padding: 8px; }
+			
+			a { color: black; }
+			a:hover { opacity: .5; }
+		}
+	}
+	
+	@media screen and (max-width: 768px) {
+		
+		article.item:nth-child(odd) {
+			clear: both;
+		}
+		
+		article.item {
+			float: left !important;
+			padding-bottom: 20px;
+			
+			.category-link.half-span { max-width: 100%; }
+		}
+	}
+}
+
+.advert-grey-wrapper {
+	@media screen and (min-width: 769px)
+	{
+		margin: 40px 0 100px;
+		height: 184px;
+		background-color: #ddd;
+	}
+}
+
+.item-manifesto {
+	display: table;
+	text-align: right;
+	overflow:hidden;
+	width: 100%;
+	float: none;
+	padding-right: 0 !important;
+	margin-bottom: 24px;
+	
+	.row {
+		display: table-row;
+		margin-right: 15px;
+		
+		div {
+			display: table-cell;
+			float: none !important;
+			background: no-repeat top right;
+			background-size: cover;
+			
+			&.post-image { 
+				background-origin: content-box; 
+				margin-bottom: 20px; 
+			}
+		}
+	}
+	
+	a, p { 
+		margin-bottom: 0;
+		color: $black; 
+	}
+	
+	h1	{
+		margin-bottom: 4px;
+		font-size: 2em;
+		font-weight: 600;
+	}
+	
+	h3	{
+		color: $blue-gray;
+		font-size: 1.45em;
+		font-style: italic;
+	}
+	
+	.previous {
+		display: block !important;
+		margin: 10px 0 0; 
+		font-style: italic;
+		
+		a {	
+			color: #777;
+			font-weight: 200;
+			
+			&:hover { color: black; }
+		}
+	}
+}
+
+.previous {
+	margin-bottom: 20px; 
+	font-style: italic;
+	text-align: right;
+	
+	a {	
+		color: #777;
+		
+		&:hover { color: black; }
+	}
+}
+
+hr.sub-column {
+	margin: 4px 0 32px;
+	border-top: 1px solid rgba(0,0,0,.5);
+}
+
+.company-post-excerpt { font-size: 14px; }
+
+.issue-articles {
+	margin-top: -43px;
+
+	h2 { font-size: 1.75em; }
+	
+	a, .content p { color: $white; }
+	
+	article {
+		margin-bottom: 30px;
+		font-weight: 400;
+		
+		.post-image {
+			padding: 10px;
+			background-position: center;
+			background-size: cover;
+		
+			.content {
+				padding: 2px 20px;
+				background: rgba(0,0,0,.45);
+				
+				h1	{
+					margin: 12px 0 2px;
+					font-size: 1.25em; 
+					font-weight: 700;
+				}
+				
+				h3	{
+					font-size: 1em;
+					font-style: italic;
+				}
+				
+				p {
+					margin-bottom: 10px;
+					font-size: .875em;
+					line-height: 1.4em;
+				}
+				
+				.description {
+					color: $white;
+					opacity: .5;
+				}
+			}
+			
+			&:hover .content { background: rgba(0,0,0,.65); }
+		}
+	}
+	
+	@media screen and (max-width: 1440px) {
+		div.row > a:nth-child(5) { display:none; }
+	}
+	
+	@media screen and (max-width: 768px) {
+		h2 { padding-top: 12px; }
+	}
+}
+
+
+h2.category-title-no-top { 
+	position: relative;
+	top: -14px;
+	margin: 0 0 12px;
+	font-size: 1.8em;
+	color: $light-gray;
+	font-weight: 200;
+}
+
+.category-articles {
+	margin-bottom: 20px;
+	
+	h2.category-title {
+		font-size: 1.125em;
+		margin-bottom: 20px;
+		
+		category {
+			padding: 3px 10px 4px;
+			color: $black;
+			text-transform: uppercase;
+			border: 1px solid rgba(0,0,0,.8);
+		}
+		
+		.description {
+			margin-left: 2px;
+			font-size: 1.125em;
+		}
+	}
+
+	.news-item {
+		
+		header {
+			padding: 20px 24px;
+			
+			h2 {
+				line-height: 1.125em;
+				font-size: 1.25em;
+			}
+			
+			h3.subtitle {
+				margin-top: 4px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1599px) {
+		
+		.quote-wrapper-inner { padding: 24px !important; }
+	}
+	
+	@media screen and (max-width: 1439px) {
+		
+		.quote-wrapper-inner {
+			
+			p { 
+				line-height: 1.25em;
+				font-size: 1.5em !important; 
+			}
+			
+			blockquote:before,
+			blockquote:after { display: none !important; }
+		}
+	}
+	
+	@media screen and (max-width: 1279px) {
+		
+		h2.category-title {
+			font-size: 1em;
+			
+			.description {
+				margin-left: 0px;
+				font-size: 1em;
+			}	
+		}
+		
+		.news-item header,
+		.quote-wrapper-inner { padding: 16px !important; }
+		
+		.quote-wrapper-inner p { 
+			line-height: 1.2em;
+			font-size: 1.4em !important; 
+		}
+	}
+	
+	@media screen and (max-width: 768px) {
+		
+		.quote-wrapper-inner {
+			
+			p { font-size: 2em !important; }
+			
+			blockquote:before,
+			blockquote:after { display: inline !important; }
+		}
+	}
+}
+
+.plus-select {
+	
+	a { color: $black !important; }
+	
+	> h3 { margin-left: 15px; }
+	
+	article {
+		
+		font-size: .825em;
+		
+		.post-image {
+			float: left;
+			width: 20%;
+			margin-right: 5%;
+			text-align: center;
+			font-size: 2.5em;
+			font-weight: 200;
+			background-size: cover;
+			margin-bottom: 30px;
+			
+			
+			div {
+				float:left;
+				width:100%;
+				padding-top:28%;
+				line-height:1em;
+				text-align:center;
+				color:white;
+			}
+			
+			&:after {
+				content: "";
+				display: block;
+				width: 100%;
+				height:0;
+				padding-bottom: 100%;
+				background: rgba(0,0,0,.4) no-repeat center;
+			}
+			
+			&.no-hover-color:after { background: transparent; }
+		}
+		
+		&:hover .post-image div { color: black; }
+		
+		h1 {
+			margin-bottom: 0;
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+		
+		h3	{
+			margin-bottom: 0;
+			padding: 4px 0;
+			color: $blue-gray;
+			font-size: 1.25em;
+			font-style: italic;
+			
+		}
+	}
+}
+
+.first-post-advert-wrapper .large-post {
+	h2 {
+		text-transform: uppercase;
+		font-size: 2em;
+		font-weight: 600 !important;
+	}
+	
+	h3 {
+		font-style: italic;
+		font-size: 1.4em !important;
+	}
+}
+
+.advert-premium {
+	@media screen and (max-width: 991px) { display: none !important; }
+}
+
+// Deprectated
+.first-post-advert-wrapper {
+  height: 100%;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    display:table;
+  }
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 15px;
+  margin-bottom: 2em;
+  .quote-format {
+    background-color: $black;
+    .post-image {
+      max-height: 465px;
+    }
+  }
+  .large-post {
+    padding: 0 !important;
+    @media screen and (min-width: 768px) {
+      width: 66% !important;
+    }
+    @include backgroundcovertopcenter;
+    .placeholder {
+      display: none;
+    }
+    @include newsitemheader;
+    header {
+      z-index: 10;
+      @include posabsolutebottomleft;
+      position: absolute !important;
+      .category-link {
+        a {
+          border: 1px solid $white;
+          color: $white;
+        }
+      }
+    }
+    .link-image {
+      z-index: 5;
+      display: block;
+      @include position(absolute, $top: 0, $left: 0, $bottom: 0, $right: 0);
+      @include transition200ms;
+      @media screen and (max-width: 767px) {
+        position: relative !important;
+      }
+      &:hover {
+        background: rgba(0,0,0,0.6);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .advert-premium {
+    @media screen and (min-width: 992px) {
+      padding: 0 0 0 30px !important;
+      width: 34% !important;
+    }
+    .post-image, .news-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.empty-wrapper {
+  // @media screen and (min-width: 768px) and (max-width: 991px) {
+  //   .item:nth-child(5) {
+  //     display: none;
+  //   }
+  // }
+  .video-post {
+    div {
+      position: relative;
+      iframe, object, embed {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: 50;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    i {
+      font-size: 6em;
+    }
+  }
+  .item:nth-child(4) {
+    float: right !important;
+  }
+}
+
+.sponsored-content-wrapper {
+  margin-bottom: 2.5em;
+  .sponsored-content {
+    border: 1px solid $bordercolor;
+    padding: 1em;
+  }
+}
+
+// 4 up home category feeds & product feeds shared
+
+.home-category-feeds, .product-feed-home  {
+  h3.archive-title {
+    margin: 0 0 (20 / 24) * 1em 0;
+  }
+}
+
+// home 4-up category feeds specific
+
+.home-category-feeds {
+  margin-bottom: .5em;
+  .news-item {
+    header {
+      padding: 1.5em;
+    }
+  }
+  h3.entry-title {
+    @media screen and (min-width: 1200px) and (max-width: 1499px) {
+      font-size: (20 / 16) * 1em;
+    }
+  }
+  .damn-plus-badge {
+    width: 75px;
+  }
+  br {
+    display: none;
+  }
+}
+
+// home 4 up product feed specific
+
+// see posts.scss and search for "Productivity alternate" to see the css for the product feed, as this uses the same css
+// as the feed for the product archive page, only on homepage, we have 100% height so boxes line up and columns widths on home are set in index.php, not
+// by css/js like on the product page (aka, homepage is NOT masonry grid).
+
+.product-feed-home {
+  @media screen and (min-width: 768px) {
+    margin-bottom: 1em;
+    .table-display {
+      display: table;
+      height: 100%;
+    }
+    .table-display:after {
+      clear: both;
+    }
+    .table-cell {
+      .news-item {
+        height: 100%;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .table-cell {
+      display: table-cell;
+      height: 47%;
+      margin-bottom: 3%;
+      .news-item {
+        header p.product-creators {
+          margin-bottom: 1.5em
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .table-cell {
+      display: table-cell;
+      height: 100%;
+      .news-item {
+        header {
+          padding-bottom: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+// agenda, instagram, join DAMN +
+
+.bottom-widgets {
+
+}
+
+// Products row
+.products-row	{
+	background: $grayhovercolor;
+	padding: 2em 0 1.75em;
+}
+
+
+// advertising border per Koen
+
+.item.advert.advert-premium .news-item .post-image   {
+  background-color: #ccc;
+  position: relative;
+  padding: 12px;
+}
+
+.item.advert.advert-premium .news-item .post-image img {
+  width: auto;
+  height: auto;
+}
+
+.sponsored-content-wrapper .advert.middle   {
+  background-color: black !important;
+  position: relative;
+  padding: 12px;
+}
+
+.sponsored-content-wrapper .advert.middle img {
+  width: auto;
+  height: auto;
+}
+
+// Advertorial Badge
+/*
+.advertorial-badge {
+  display: block;
+  z-index: 10;
+  padding: .2em 1.25em;
+  color: $black;
+  font-size: 1.4em;
+  background-color: $white;
+  clear: both;
+  border-bottom: 1px solid $bordercolor;
+  @media screen and (max-width: 767px) {
+    padding-top: .75em;
+    font-size: 15px;
+    h3 {
+      font-size: 14px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    right: 4%;
+    background: rgba(255,255,255,.96);
+    border: 0;
+  }
+  @media screen and (min-width: 1540px) {
+    right: 7%;
+  }
+  h3 {
+    font-size: 15px;
+    padding-top: .25em;
+    font-family: $museo;
+    font-style: italic;
+    color: $black !important;
+  }
+}
+*/
+
+
