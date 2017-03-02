@@ -5,10 +5,10 @@
 
 	{{#iterate}}
 
-		<img src="{{images.#.url}}" title="{{images.#.post_title}}" />
+		<img src="{{images.#.url}}" title="{{images.#.post_title}}" class="carousel" />
 		
 		<div class='caption caption-right'>
-			{{images.#.post_content}}			
+			{{images.#.post_content}}
 		</div>
 
 	{{/iterate}}
@@ -145,7 +145,8 @@
 			
 			</div>
 		</div>
-		
+
+
 		{{#spill}}
 		<div class="row spill-quotes">
 			<div class="col-md-8 col-lg-10 col-lg-offset-1">
@@ -166,7 +167,7 @@
 				{{#spill}}
 				
 					<div class="image col-md-4">
-						<img src="{{images.url}}" title="{{images.post_title}}" />
+						<img src="{{images.url}}" title="{{images.post_title}}" class="carousel" />
 						
 						<span class="caption">
 							{{images.post_content}}
@@ -183,7 +184,15 @@
 				</div>
 			</div>
 		</div>
-		
+
+		<div class="hidden-fancybox" style="display:none;">
+		{{#images}}
+			<a class="fancybox" rel="group" href="{{url}}" data-src="{{url}}">
+				<img src="{{url}}" alt="{{post_title}}" data-src="{{url}}" />
+			</a>
+		{{/images}}
+		</div>
+
 	</div>
 </article>
 

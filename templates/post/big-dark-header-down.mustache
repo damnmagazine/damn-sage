@@ -5,7 +5,7 @@
 
 		{{#iterate}}
 
-		<img src="{{images.#.url}}" title="{{images.#.post_title}}" />
+		<img src="{{images.#.url}}" title="{{images.#.post_title}}" class="carousel"/>
 		
 		<div class="absolute-bottom">
 			<div class="row">
@@ -115,7 +115,7 @@
 			{{#spill}}
 			
 				<div class="image col-md-4">
-					<img src="{{images.url}}" title="{{images.post_title}}" />
+					<img src="{{images.url}}" title="{{images.post_title}}" class="carousel" />
 					
 					<span class="caption">
 						{{images.post_content}}
@@ -124,6 +124,16 @@
 			
 			{{/spill}}
 			</div>
+
+
+			<div class="hidden-fancybox" style="display:none;">
+			{{#images}}
+				<a class="fancybox" rel="group" href="{{url}}" data-src="{{url}}">
+					<img src="{{url}}" alt="{{post_title}}" data-src="{{url}}" />
+				</a>
+			{{/images}}
+			</div>
+
 
 		</div>
 	</div>

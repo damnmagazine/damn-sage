@@ -78,6 +78,7 @@ function assets() {
 
   wp_enqueue_script('sliderjs', get_stylesheet_directory_uri() . '/assets/scripts/jquery.slides.min.js', ['jquery'], null, true);
   
+  wp_enqueue_script('fancybox', get_stylesheet_directory_uri() . '/assets/scripts/fancybox.min.js', ['jquery'], null, true);
   wp_enqueue_script('general', get_stylesheet_directory_uri() . '/assets/scripts/general.js', ['jquery'], null, true);
 
   if( get_post_type() === 'projects' ){

@@ -107,7 +107,6 @@ if( get_post_meta ($post->ID, 'issuu_shortcode', true) ){
 }
 
 
-
 # Load Head
 get_template_part('templates/head'); 
 

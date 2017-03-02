@@ -59,7 +59,7 @@
 			{{#spill}}
 			
 				<div class="image col-sm-6">
-					<img src="{{images.url}}" title="{{images.post_title}}" />
+					<img src="{{images.url}}" title="{{images.post_title}}" class="carousel" />
 					
 					<span class="caption">
 						{{images.post_content}}
@@ -77,7 +77,15 @@
 				</div>
 			</div>
 		</div>
-		
+
+		<div class="hidden-fancybox" style="display:none;">
+		{{#images}}
+			<a class="fancybox" rel="group" href="{{url}}" data-src="{{url}}">
+				<img src="{{url}}" alt="{{post_title}}" data-src="{{url}}" />
+			</a>
+		{{/images}}
+		</div>
+
 	</div>
 </article>
 
