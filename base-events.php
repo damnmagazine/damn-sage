@@ -120,7 +120,7 @@ if( !empty( $highlights ) ){
 
 } else {
 	$highlights = $DAMN->relatedPosts( 1, $parameters->post, null, $event_tag->term_id, [], 'date' );
-	$rel_posts = $DAMN->relatedPosts( -1, $parameters->post, null, $event_tag->term_id, [$highlights[0]->ID], 'date' );
+	$rel_posts = $DAMN->relatedPosts( 6, $parameters->post, null, $event_tag->term_id, [$highlights[0]->ID], 'date' );
 	$parameters->posts = $highlights;
 	$parameters->rel_posts = $rel_posts; 
 }

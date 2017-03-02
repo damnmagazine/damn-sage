@@ -10,6 +10,7 @@ License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
 */
 
+
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
 .fancybox-wrap,
 .fancybox-skin,
@@ -1059,4 +1060,27 @@ div.hidden-fancybox{
 
 div.absolute-bottom{
 	pointer-events: none;
+}
+
+#home-carousel .carousel-inner .item a>img {
+	height: 100%;
+}
+
+/**
+ * Event Fixes
+ */
+.width-100{
+	width: 100%;
+}
+
+.single-events .event-title{
+	left: 26px!important;
+}
+
+body.single-events>header .social-share {
+	left: -36px;
+}
+
+body.single-events nav.sub-footer{
+	top: 0px!important;
 }
