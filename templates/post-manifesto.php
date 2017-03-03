@@ -15,7 +15,7 @@ $thumb = has_post_thumbnail ()? wp_get_attachment_image_src( get_post_thumbnail_
 	<?php if($thumb): ?>
 			
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-xs-12 col-sm-12 col-md-8">
 			
 				<h1>
 					<span class="description caps-title">Manifesto /</span>
@@ -25,10 +25,10 @@ $thumb = has_post_thumbnail ()? wp_get_attachment_image_src( get_post_thumbnail_
 			
 				<?=the_excerpt()?>
 				
-				<div class='previous'><a href="/category/manifesto">View All</a> <a href="/?issue=damn-<?=$issue_number-1?>#manifesto">/ Previous Manifesto</a></div>
+				<span class='previous'><a href="/category/manifesto">View All</a> <a href="/?issue=damn-<?=$issue_number-1?>#manifesto">/ Previous Manifesto</a></span>
 				
 			</div>
-			<div class="col-md-4 post-image" style="background-image:url(<?=$thumb['0']?>);">
+			<div class="col-xs-12 col-sm-12 col-md-4 post-image" style="background-image:url(<?=$thumb['0']?>);">
 				<a class="home-img-link" href="<?=the_permalink()?>"></a>
 			</div>
 		</div>

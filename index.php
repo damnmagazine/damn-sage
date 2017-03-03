@@ -239,17 +239,17 @@ if (!have_posts())
 		<article class="item-manifesto col-md-12" >
 			
 				<div class="row">
-					<div class="col-xs-12 col-sm-8 col-md-8">
+					<div class="col-xs-12 col-sm-12 col-md-8">
 						<a href="<?php echo get_permalink( $main_event->ID ); ?>" rel="bookmark" title="<?php echo get_the_title( $main_event->ID ); ?>">
 							<h1><span class="description"><span class="caps-title">Events</span> /</span><span class="grey-font"><?php echo get_the_title( $main_event->ID ); ?></span></h1>
 
 							<p><?php echo $main_event->post_excerpt ?></p>
 						</a>
-						<div class="previous"><a href="/events">View All Events</a></div>
+						<span class="previous"><a href="/events">View All Events</a></span>
 						
 					</div>
 
-					<div class="hidden-xs col-sm-4 col-md-4 post-image" style="background-image:url(<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id( $main_event->ID ) ); ?>);"><a class="home-img-link" href="<?php echo get_permalink( $main_event->ID ); ?>"></a></div>
+					<div class="col-xs-12 col-sm-12 col-md-4 post-image" style="background-image:url(<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id( $main_event->ID ) ); ?>);"><a class="home-img-link" href="<?php echo get_permalink( $main_event->ID ); ?>"></a></div>
 
 				</div>
 			</a>

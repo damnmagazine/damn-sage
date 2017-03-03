@@ -94,7 +94,6 @@ $highlights = ($highlight = get_field ('highlight'))? $DAMN->sugar ([$highlight]
 # Listed Posts
 $event_tag = get_term_by( 'name', $parameters->event_tag , 'post_tag' );
 
-
 # text area 
 $parameters->text_area = get_field('text_area', get_the_ID() );
 
@@ -141,10 +140,10 @@ if ($parameters->contrast) $classes .= ' positive-contrast';
 # Load Head
 get_template_part('templates/head'); 
 
+
 ?>
 
 	<body <?php body_class ($classes); ?>>	
-	
 
 <?php
 

@@ -44,16 +44,29 @@ $header_subtitle = get_field ('header_subtitle', $issue_acf_id);
 ?>
 
 	<div class="wrap" role="document">
-	<?php if (is_tax( 'magazine' ) || is_page() || is_post_type_archive('calendar')): ?>
+	
+	<?php if( $_SERVER['REQUEST_URI'] === '/colophon/advertising/' ): ?>
+
+	<div class="content container">
+		<div class="col-md-2 col-sm-0"></div>
+		<div class="col-md-4 col-sm-6">image</div>
+		<div class="col-md-4 col-sm-6">content</div>
+		<div class="col-md-2 col-sm-0"></div>
+	</div>
+
+	<?php elseif (is_tax( 'magazine' ) || is_page() || is_post_type_archive('calendar')): ?>
 
 		<?php 
 			if ( str_replace( '/' , '', $_SERVER['REQUEST_URI'] ) === 'back-issues'  ){
 				get_template_part('templates/back-issues-copy');
 			}
+			
+			var_dump($_SERVER['REQUEST_URI']);
+
 		?>
 
 		<div class="content container">
-			
+
 			<?php if (Config\display_sidebar() && !is_post_type_archive('calendar')) : ?>
 			<aside class="sidebar visible-sm-block visible-md-block visible-lg-block" role="complementary">
 				<?php include Wrapper\sidebar_path(); ?>
@@ -70,6 +83,9 @@ $header_subtitle = get_field ('header_subtitle', $issue_acf_id);
 				<?php include Wrapper\sidebar_path(); ?>
 			</aside>
 			<?php endif; ?>
+	
+	
+
 
 	<?php else: ?>
 		<div class="content">
