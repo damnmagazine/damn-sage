@@ -1099,9 +1099,34 @@ body.advertising .title-wrapper {
 }
 
 body.advertising .content.container {
-	padding: 0px;
+	padding: 10px 0px 80px 0px;
+}
+body.advertising .content.container .adverting-image{
+	padding-left: 0;
+	padding-right: 30px;
 }
 
+
+
+body.advertising .content.container .adverting-content{
+	padding-left: 0;
+}
+
+body.advertising .content.container .adverting-content *{
+	font-size: 14px;
+}
+
+@media (max-width: 991px){
+	body.advertising .content.container .adverting-image,
+	body.advertising .content.container .adverting-content{
+		padding: 0 0 20px 0;
+		float: none;
+		margin:  0 auto;
+	}
+}
+/**
+ * event/manifest mobile fix
+ */
 .item-manifesto {
 	margin-bottom: 0px;
 	padding-left: 0px;

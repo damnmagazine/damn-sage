@@ -48,10 +48,29 @@ $header_subtitle = get_field ('header_subtitle', $issue_acf_id);
 	<?php if( $_SERVER['REQUEST_URI'] === '/colophon/advertising/' ): ?>
 
 	<div class="content container">
-		<div class="col-md-2 col-sm-0"></div>
-		<div class="col-md-4 col-sm-6">image</div>
-		<div class="col-md-4 col-sm-6">content</div>
-		<div class="col-md-2 col-sm-0"></div>
+		<div class="hidden-sm col-md-2"></div>
+
+		<div class="col-md-3 col-sm-6 adverting-image">
+			<img src="<?php echo get_template_directory_uri(); ?>/dist/images/1234.jpg" alt="">
+		</div>
+
+		<div class="col-md-5 col-sm-6 adverting-content">
+			<p>We are happy to offer you tailor-made solutions for integrating and sharing your unique stories, company novelties, and new projects in our information stream. We love thinking together with you on how to challenge and to be challenged. Which is precisely why we are engaging partners, not just plain advertisers.</p>
+			<p>To request a media kit and discuss partnership options please contact:</p>
+			<p>
+				<strong>Advertising Editor</strong><br>
+				Bessam El-Asmar <br>
+				<a href="mailto:bessam@damnmagazine.net?subject=advertising">bessam@damnmagazine.net</a>
+			</p>
+			<p>
+				<strong>PR and Marketing Assistant</strong><br>
+				TAsya Kudryk <br>
+				<a href="mailto:tasya@damnmagazine.net?subject=advertising">tasya@damnmagazine.net</a>
+			</p>
+			<p>Thank you!</p>
+		</div>
+
+		<div class="hidden-sm col-md-2"></div>
 	</div>
 
 	<?php elseif (is_tax( 'magazine' ) || is_page() || is_post_type_archive('calendar')): ?>
@@ -60,8 +79,6 @@ $header_subtitle = get_field ('header_subtitle', $issue_acf_id);
 			if ( str_replace( '/' , '', $_SERVER['REQUEST_URI'] ) === 'back-issues'  ){
 				get_template_part('templates/back-issues-copy');
 			}
-			
-			var_dump($_SERVER['REQUEST_URI']);
 
 		?>
 
