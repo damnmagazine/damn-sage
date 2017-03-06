@@ -59,12 +59,12 @@ $header_subtitle = get_field ('header_subtitle', $issue_acf_id);
 			<p>To request a media kit and discuss partnership options please contact:</p>
 			<p>
 				<strong>Advertising Editor</strong><br>
-				Bessam El-Asmar <br>
-				<a href="mailto:bessam@damnmagazine.net?subject=advertising">bessam@damnmagazine.net</a>
+				Bessaam El-Asmar <br>
+				<a href="mailto:bessaam@damnmagazine.net?subject=advertising">bessaam@damnmagazine.net</a>
 			</p>
 			<p>
 				<strong>PR and Marketing Assistant</strong><br>
-				TAsya Kudryk <br>
+				Tasya Kudryk <br>
 				<a href="mailto:tasya@damnmagazine.net?subject=advertising">tasya@damnmagazine.net</a>
 			</p>
 			<p>Thank you!</p>
