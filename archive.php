@@ -50,8 +50,6 @@
 ?>
 
 
-Foo.
-
 <?php if (!isset ($success) && !have_posts()) : ?>
   <div class="alert alert-warning">
     <?php _e('Sorry, no results were found.', 'sage'); ?>
