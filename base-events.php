@@ -105,19 +105,21 @@ $parameters->text_area = get_field('text_area', get_the_ID() );
 $parameters->facebook_shortcode = do_shortcode( get_field('facebook_shortcode', get_the_ID() ) );
 
 
+
 if( !empty( $highlights ) ){
 
-	$posts = $DAMN->relatedPosts( -1, $parameters->post, null, $event_tag->term_id, [$highlights[0]->ID], 'date');
-	if( !$parameters->facebook_shortcode ){
+	$posts = $DAMN->relatedPosts( 6, $parameters->post, null, $event_tag->term_id, [$highlights[0]->ID], 'date');
+	/*if( !$parameters->facebook_shortcode ){
 		$posts = $DAMN->relatedPosts( -1, $parameters->post, null, $event_tag->term_id, [$highlights[0]->ID], 'date', 3);
 		$offset = $DAMN->relatedPosts( 3, $parameters->post, null, $event_tag->term_id, [], 'date' );
 		$parameters->offset_posts = $offset; 
-	}
+	}*/
 	$parameters->posts = $highlights;
 	$parameters->rel_posts = $posts; 
 
 
 } else {
+
 	$highlights = $DAMN->relatedPosts( 1, $parameters->post, null, $event_tag->term_id, [], 'date' );
 	$rel_posts = $DAMN->relatedPosts( 6, $parameters->post, null, $event_tag->term_id, [$highlights[0]->ID], 'date' );
 	$parameters->posts = $highlights;

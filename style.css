@@ -1140,3 +1140,12 @@ body.advertising .content.container .adverting-content *{
 .item-manifesto .row div.post-image {
 	height: 190px;
 }
+
+/**
+ * Caroussel controls
+ */
+
+.carousel-control.left,
+.carousel-control.right{
+	background-image: none!important;
+}
