@@ -86,7 +86,7 @@ if (!have_posts())
 
 	$company_query = [
 		'posts_per_page' => 3,
-		'post_type' => 'advertorial',
+		'post_type' => 'company_news',
 		'orderby' => 'post_date',
 		'order' => 'DESC'
 	];
@@ -99,7 +99,7 @@ if (!have_posts())
 	 */
 	$issue_query = [
 		'posts_per_page' => 2,
-		'post_type' => ['post', 'advertorial'],
+		'post_type' => ['post', 'company_news'],
 		'orderby' => 'post_date',
 		'order' => 'DESC',
 		'post__not_in' => [],
