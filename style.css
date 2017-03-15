@@ -1149,3 +1149,12 @@ body.advertising .content.container .adverting-content *{
 .carousel-control.right{
 	background-image: none!important;
 }
+
+#home-carousel .carousel-inner .item{
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.product-feed-home .table-cell .news-item {
+	min-height: 710px;
+}

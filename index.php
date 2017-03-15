@@ -468,25 +468,3 @@ if ($products->have_posts()) : ?>
 </div>
 
 
-
-
-<?php 
-/*
-* Popup
- */
-?>
-
-<div id="popup-bg"></div>
-
-<?php get_template_part('templates/popup', 'full'); ?>
-
-
-<?php 
-/*
-* Mobile version
- */
- ?>
- 
-<?php get_template_part('templates/popup', 'mobile'); ?>
-
-

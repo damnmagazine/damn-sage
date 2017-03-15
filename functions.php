@@ -174,8 +174,20 @@ class DAMN {
 			],
 			'orderby'		 => $orderby,
 			//'post__not_in'	 => $exclude
+			'meta_query' => array(
+				array(
+					'key' => '_thumbnail_list',
+					'value' => '[""]',
+					'compare' => '!='
+				),
+				array(
+					'key' => '_thumbnail_list',
+					'value' => '[]',
+					'compare' => '!='
+				)
+			)
 		];
-		
+
 		# Tags
 		if( $tags && !is_array( $tags ) ){
 			$args['tag_id'] = $tags;

@@ -43,18 +43,15 @@ if (has_post_thumbnail () && !has_post_format('quote'))
 		?>
 			
 			
-			<div class="item<?=count ($indicators)? '': ' active'?>">
-				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-					<img src="<?=$url?>" alt="<?= the_title_attribute()?>">
-					
+			<div class="item<?=count ($indicators)? '': ' active'?>" style="background-image: url(<?=$url?>);">
+				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" >
 					<div class="carousel-caption">
 						<h3><?php the_title_attribute(); ?></h3>
 						<p><?=$fill?></p>
 					</div>
 				</a>
 			</div>
-			
-				
+
 			<?php
 				$indicators[] = '<li data-target="#home-carousel" data-slide-to="' .count ($indicators). '"' .(count ($indicators)? '': ' class="active"'). '></li>';
 				endwhile;
