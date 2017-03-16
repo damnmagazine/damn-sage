@@ -1158,3 +1158,7 @@ body.advertising .content.container .adverting-content *{
 .product-feed-home .table-cell .news-item {
 	min-height: 710px;
 }
+
+.col-lg-3.side-track{
+	clear: inherit!important;
+}

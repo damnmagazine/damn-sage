@@ -44,8 +44,8 @@ $header_subtitle = get_field ('header_subtitle', $issue_acf_id);
 ?>
 
 	<div class="wrap" role="document">
-	
-	<?php if( $_SERVER['REQUEST_URI'] === '/colophon/advertising/' ): ?>
+
+	<?php if( $pagename = get_query_var('pagename') === 'advertising' ): ?>
 
 	<div class="content container">
 		<div class="hidden-sm col-md-2"></div>
