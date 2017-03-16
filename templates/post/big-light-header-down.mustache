@@ -8,49 +8,35 @@
 		<img src="{{images.#.url}}" title="{{images.#.post_title}}" class="carousel"/>
 		
 		<div class='caption caption-right pull-down'>
-			{{images.#.post_content}}			
+			{{images.#.post_content}}
 		</div>
 
 	{{/iterate}}
-		
-		{{#contrast}}
-		<div class="header-content pull-down title-light">
 
-			<h1>{{{post.post_title}}}</h1>
-			<h2>{{#get_field}}sub-title{{/get_field}}</h2>
-			
-			<p class="excerpt">
-				{{{post.post_excerpt}}}
-			</p>
-			
-			<author>
-				<a href="{{author.url}}">{{author.display_name}}</a>
-			</author>
-			
-			<date>{{date}}</date>
-			
-		</div>
-		{{/contrast}}
-		
-		{{^contrast}}
-			<div class="header-content pull-down title-dark">
-
-				<h1>{{{post.post_title}}}</h1>
-				<h2>{{#get_field}}sub-title{{/get_field}}</h2>
-				
-				<p class="excerpt">
-					{{{post.post_excerpt}}}
-				</p>
-				
-				<author>
-					<a href="{{author.url}}">{{author.display_name}}</a>
-				</author>
-				
-				<date>{{date}}</date>
-				
+		<div class="absolute-bottom">
+			<div class="row">
+				<div class="col-md-7 col-lg-5 header-content">
+					
+					<h1>{{{post.post_title}}}</h1>
+					<h2>{{#get_field}}sub-title{{/get_field}}</h2>
+					
+					<p class="excerpt">
+						{{{post.post_excerpt}}}
+					</p>
+					
+					<author>
+						<a href="{{author.url}}">{{author.display_name}}</a>
+					</author>
+					
+					<date>{{date}}</date>
+					
+				</div>
+				<div class="col-lg-offset-2 col-lg-5 caption caption-right">
+					{{images.#.post_content}}
+				</div>
 			</div>
-		{{/contrast}}
-
+		</div>
+	
 	</div>
 	
 	<div class="container post-content">

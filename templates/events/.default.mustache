@@ -167,12 +167,14 @@
 <div class="container">
 
 	<div class="row">
-
+		
+		{{#brand.logo}}
 		<div class="col-sm-8 col-md-3 col-lg-3">
 			<a href="{{brand.logo}}" target="_blank">
-				<img src="{{brand.logo}}" title="{{brand.post_title}}" class="carousel" />
+				<img src="{{brand.logo}}" title="{{brand.post_title}}"/>
 			</a>
 		</div>
+		{{/brand.logo}}
 
 		<div class="col-sm-12 col-md-7 col-lg-9">
 			<a href="{{calnode.url}}">
@@ -214,13 +216,15 @@
 		
 		<ul class='external_links event-external-links'>
 			{{#external_links}}
-			<li><a href="{{.}}">{{.}}</a></li>
+				<li><a href="{{.}}">{{.}}</a></li>
 			{{/external_links}}
+
 			{{#brand.link}}
-			<li><a href="{{brand.link}}">{{brand.link}}</a></li>
+				<li><a href="{{brand.link}}">{{brand.title}}</a></li>
 			{{/brand.link}}
+
 			{{#press_url}}
-			<li><a href="{{press_url}}" class="btn btn-primary">Press</a></li>
+				<li><a href="{{press_url}}" class="btn btn-primary">Press</a></li>
 			{{/press_url}}
 		</ul>
 		

@@ -84,9 +84,17 @@ $parameters->calnode->url = get_post_permalink ($parameters->calnode->ID);
 
 # Brand
 $parameters->brand = get_field ('brand');
-$parameters->brand->logo = get_field ('logo', $parameters->brand->ID);
-$parameters->brand->link = get_field ('link', $parameters->brand->ID);
-$parameters->brand->acfid = 'brand_' . $parameters->brand->ID;
+if( $parameters->brand ){
+	$parameters->brand->logo = get_field ('logo', $parameters->brand->ID);
+	$parameters->brand->link = get_field ('link', $parameters->brand->ID);
+	$parameters->brand->title = get_field ('link', $parameters->brand->ID);
+	$parameters->brand->acfid = 'brand_' . $parameters->brand->ID;
+} else {
+	$parameters->brand = new StdClass;
+	$parameters->brand->link = get_field( 'social_facebook' );
+	$parameters->brand->title = get_field( 'social_facebook_title' ) ? get_field( 'social_facebook_title' ) : get_field( 'social_facebook' );
+}
+
 
 #Highlight
 $highlights = ($highlight = get_field ('highlight'))? $DAMN->sugar ([$highlight]): [];
