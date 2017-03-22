@@ -50,11 +50,7 @@ $header_subtitle = get_field ('header_subtitle', $issue_acf_id);
 	<div class="content container">
 		<div class="hidden-sm col-md-2"></div>
 
-		<div class="col-md-3 col-sm-6 adverting-image">
-			<img src="<?php echo get_template_directory_uri(); ?>/dist/images/1234.jpg" alt="">
-		</div>
-
-		<div class="col-md-5 col-sm-6 adverting-content">
+		<div class="col-md-8 col-sm-12 adverting-content">
 			<p>We are happy to offer you tailor-made solutions for integrating and sharing your unique stories, company novelties, and new projects in our information stream. We love thinking together with you on how to challenge and to be challenged. Which is precisely why we are engaging partners, not just plain advertisers.</p>
 			<p>To request a media kit and discuss partnership options please contact:</p>
 			<p>
