@@ -385,8 +385,9 @@ footer .main-logo {
 }
 
 a.main-logo {
-    background: url("assets/images/damn.svg") no-repeat!important;
- }
+    background: url("dist/images/damn_new_logo.png") no-repeat!important;
+    background-size: contain!important;
+}
 
 .event-text-area a{
 	color:#141412;
