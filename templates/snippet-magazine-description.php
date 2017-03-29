@@ -26,6 +26,6 @@
     </div>
   </article>
   <div class="title-wrapper-in-content">
-    <h3 class="marginBottom">All Articles From This Issue</h3>
+    <h3 class="marginBottom">More Articles From This Issue</h3>
   </div>
 </div>
