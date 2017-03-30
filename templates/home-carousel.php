@@ -22,7 +22,7 @@
 			//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
 			//$url = $thumb['0'];
 			//fetch_post_image()
-				
+$is_video = false;
 if (has_post_thumbnail () && !has_post_format('quote'))
 {
 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
@@ -37,14 +37,24 @@ if (has_post_thumbnail () && !has_post_format('quote'))
 		$array =json_decode($list[0]);
 		$thumb = wp_get_attachment_image_src( $array[0], 'large' );
 		$url = $thumb['0'];
+	} else {
+		if( get_post_meta( $post->ID, '_fvp_video' ) ){
+			$is_video = true;
+			$video = get_post_meta( $post->ID, '_fvp_video' );
+			$url = $video[0]['img_url'];
+			$url = str_replace("hqdefault","maxresdefault", $url);
+		}
 	}
 }
 
 		?>
 			
 			
-			<div class="item<?=count ($indicators)? '': ' active'?>" style="background-image: url(<?=$url?>);">
+			<div class="item<?=count ($indicators)? '': ' active'?>" style="background-image: url(<?=$url?>);background-position-y:center;">
 				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" >
+					<?php if( $is_video ){ ?>
+						<img src="<?= get_template_directory_uri(); ?>/dist/images/Video-Play-Icon.png" alt="player icon" class="carousel-player-icon">
+					<?php } ?>
 					<div class="carousel-caption">
 						<h3><?php the_title_attribute(); ?></h3>
 						<p><?=$fill?></p>

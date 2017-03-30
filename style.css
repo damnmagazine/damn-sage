@@ -1143,7 +1143,7 @@ body.advertising .content.container .adverting-content *{
 }
 
 /**
- * Caroussel controls
+ * Carousel controls
  */
 
 .carousel-control.left,
@@ -1162,4 +1162,18 @@ body.advertising .content.container .adverting-content *{
 
 .col-lg-3.side-track{
 	clear: inherit!important;
+}
+
+/**
+ * Carousel video icon
+ */
+.carousel-player-icon{
+	position: absolute!important;
+	width: 200px!important;
+	height: 120px!important;
+	top: 0!important;
+	bottom: 0!important;
+	right: 0!important;
+	left: 0!important;
+	margin: auto!important;
 }
