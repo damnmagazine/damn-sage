@@ -72,6 +72,9 @@ $parameters->event_tag = get_field ('event_tag', get_the_ID());
 # Categories
 $parameters->categories = get_the_category (get_the_ID());
 
+#GIF
+$parameters->gif = get_template_directory_uri() . "/dist/images/gif-litta.gif";
+
 
 # Agenda
 $parameters->calnode = get_field ('calnode');

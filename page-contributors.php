@@ -54,6 +54,9 @@ Template Name: Contributors
 
   <footer class="contributors-list">
     <?php foreach($users as $user) { 
+        if( get_user_meta($user->ID, 'description', true) == "" ){
+          continue;
+        }
 
          if( substr( $user->display_name , 0, 1 ) != $current ){
               $current = substr( $user->display_name , 0, 1 );

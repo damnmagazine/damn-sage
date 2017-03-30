@@ -1177,3 +1177,14 @@ body.advertising .content.container .adverting-content *{
 	left: 0!important;
 	margin: auto!important;
 }
+
+/**
+ * Event GIF
+ *
+ */
+.event-gif {
+	max-width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 40px;
+}
