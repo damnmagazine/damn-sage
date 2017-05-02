@@ -166,10 +166,15 @@ class DAMN {
 		$base_args = [
 			'posts_per_page' => $limit == -1? $limit: $limit * 2,
 			'post_type'		 => array('post','product','calendar'),
-			'date_query'	 => [
+			/*'date_query'	 => [
 				[
 					'column' => 'post_date',
 					'after'  => '2 year ago',
+				]
+			],*/
+			'date_query'	 => [
+				[
+					'year'  => "2017"
 				]
 			],
 			'orderby'		 => $orderby,

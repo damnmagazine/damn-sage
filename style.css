@@ -1188,3 +1188,8 @@ body.advertising .content.container .adverting-content *{
 	margin-left: auto;
 	margin-bottom: 40px;
 }
+
+/* Productivity caption */
+.single-product.positive-contrast span.caption {
+	color: #000!important;
+}
