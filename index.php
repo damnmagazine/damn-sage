@@ -18,6 +18,14 @@ if (!have_posts())
 		'post_type' => 'post',
 		'orderby' => 'post_date',
 		'order' => 'DESC',
+		'tax_query' => [
+			[
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => ['long-reads'],
+				'operator' => 'NOT IN'
+			]
+		],
 		'relation' => 'OR',
 			array(
 				'key' => '_thumbnail_id',
@@ -55,6 +63,28 @@ if (!have_posts())
 		'order' => 'DESC'
 	];
 	
+
+
+	/**
+	 *  Long Reads.
+	 *
+	 */
+	$longreads_query = [
+		'posts_per_page' => 3,
+		'post_type' => 'post',
+		'orderby' => 'post_date',
+		'order' => 'DESC',
+		'tax_query' => [
+			[
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => ['long-reads']
+			]
+		]
+	];
+
+
+
 	/**
 	 *  Manifesto stream.
 	 *
@@ -230,6 +260,44 @@ if (!have_posts())
 		?>
 		<!--</div>-->
 	</div>
+
+
+
+	<?php 
+		/**
+		 * Long Reads
+		 */
+		$longreads = new WP_Query($longreads_query);
+
+		if( $longreads->have_posts() ) { ?>
+
+			<div class="empty-wrapper row">
+				
+				<div class="col-sm-12 col-md-12">
+
+					<hr class="sub-column" />
+					
+					<!-- Company News -->
+					<h2 class="category-title-no-top caps-title">Long Reads</h2>
+					<div class="row">
+						<div class="hp-latest-posts">
+							<?php
+								while ( $longreads->have_posts() ) {
+									$longreads->the_post();
+									get_template_part('templates/home', 'company-posts');
+									$issue_query['post__not_in'][] = get_the_ID();
+								}
+							?>
+						</div>
+
+					</div>
+					<br>
+				</div>
+			</div>
+			<?php 
+			}
+		?>
+
 
 	<?php 
 		$main_event = get_field('highlighted_event', 'option');
@@ -458,10 +526,10 @@ if ($products->have_posts()) : ?>
 <div class="container gif-container">
 	<div class="row">
 		<div class="col-xs-12 col-md-12 gif-container">
-			<h2 class="caps-title grey-font">DAMNºmagazine #61</h2>
-			<h3>An open-minded view on the interchangeable worlds of design, architecture and art. <a href="http://www.damnmagazine.net/editions/damn-61/">Read more.</a></h3>
-			<a href="http://www.damnmagazine.net/editions/damn-61/">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/damn61.gif" alt="magazine gif">
+			<h2 class="caps-title grey-font">DAMNºmagazine #62</h2>
+			<h3>An open-minded view on the interchangeable worlds of design, architecture and art. <a href="http://www.damnmagazine.net/editions/damn-62/">Read more.</a></h3>
+			<a href="http://www.damnmagazine.net/editions/damn-62/">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/damn62.gif" alt="magazine gif">
 			</a>
 		</div>
 	</div>

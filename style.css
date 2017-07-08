@@ -1193,3 +1193,7 @@ body.advertising .content.container .adverting-content *{
 .single-product.positive-contrast span.caption {
 	color: #000!important;
 }
+
+.single-calendar.positive-contrast span.caption {
+	color: #000!important;
+}
